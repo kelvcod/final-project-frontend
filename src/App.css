@@ -32,7 +32,24 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+
+
 }
+
+.rows {
+  flex-direction: column;
+  align-items: center;
+
+  
+}
+
+.card {
+  width: 250px;
+  height: 0%;
+
+}
+
