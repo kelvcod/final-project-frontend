@@ -11,9 +11,9 @@ const cards = ({ service }) => {
     <div className="row">
       <div className="col s12 m7">
         <div className="card">
-          <div className="card-image ">
+          <div className="card-image service_image">
             {/* <img src="https://cdn.pixabay.com/photo/2021/11/11/16/05/fruits-6786607_1280.jpg" /> */}
-            <img className='service_image'
+            <img
               src={"."+image}
               alt="image"
             />
