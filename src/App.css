@@ -43,18 +43,20 @@
   align-items: center;
 }
 
-.card {
-  width: 250px;
-  height: 0%;
+.card.service-card {
+  margin: 0 auto;
   border-radius: 30px;
+  overflow: hidden;
+  padding: 0 0 16px;
+  display: flex;
+  flex-direction: column;
 }
 
 .row {
-  display: inline-block;
-  flex-direction: column;
-  align-items: center;
+  display: flex;
   justify-content: space-between;
-  border-radius: 30px;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
 .price {
@@ -82,5 +84,28 @@
   
 }
 
+.service-image__wrap img.service_image {
+  min-width: 100%;
+  min-height: 100%;
+  height: auto;
+  width: auto;
+}
 
+.service-image__wrap{
+  height: 250px;
+  overflow: hidden;
+}
 
+.service-card__title{
+  margin-bottom: auto;
+}
+.service-card__content{
+  flex: 1 1 30%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+}
+.service-card__btn{
+  margin-top: 16px;
+  align-self: center;
+}
