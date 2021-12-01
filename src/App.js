@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import { Switch, Route } from "react-router";
 import Service from "./components/Service";
 import Breadcrumbs from "./components/Breadcrumbs";
+import Checkout from "./components/Checkout";
 
 const App = () => {
   const [services, setServices] = useState();
@@ -18,7 +19,7 @@ const App = () => {
     fetch(`${REACT_APP_BACKEND_URL}/services`)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        // console.log(data);
         setServices(data);
         //setUsers(data)
       });
@@ -41,8 +42,11 @@ const App = () => {
         <Route exact path="/">
           <Home services={services} />
         </Route>
-        <Route exact path="/services/:id">
+        <Route path="/services/:id">
           <Service services={services} />
+        </Route>
+        <Route path="/checkout">
+          <Checkout services={services} />
         </Route>
       </Switch>
       <div>
