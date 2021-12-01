@@ -2,16 +2,16 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="page-footer">
-      <div className="container">
-        <div className="row">
+    <footer className="page-footer" id="footer">
+      <div className="container container_footer">
+        <div className="row container_footer">
           <div className="col l4 s12">
             <h5 className="white-text">Contact us</h5>
-            <p className="grey-text text-lighten-4">
-              <p>Address: </p>
-              <p>Email: </p>
-              <p>Phone: </p>
-            </p>
+            <ul className="grey-text text-lighten-4">
+              <li>Address: </li>
+              <li>Email: </li>
+              <li>Phone: </li>
+            </ul>
           </div>
           <div className="col l4 s12">
             <h5 className="white-text">Categories</h5>
@@ -48,7 +48,7 @@ const Footer = () => {
               </li>
               <li>
                 <a className="grey-text text-lighten-3" href="#!">
-                  Privacy 
+                  Privacy
                 </a>
               </li>
             </ul>
@@ -60,7 +60,7 @@ const Footer = () => {
         <div className="container">
           © 2021 Copyright
           <a className="grey-text text-lighten-4 right" href="#!">
-                More Links
+            More Links
           </a>
         </div>
       </div>
