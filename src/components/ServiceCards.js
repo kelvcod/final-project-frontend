@@ -12,7 +12,7 @@ const ServiceCards = ({ service }) => {
         <img
           className="service_image"
           src={`${REACT_APP_BACKEND_URL}${image}`}
-          alt="image of srvice"
+          alt="image of service"
         />
         {/* <span className="card-title">{}</span> */}
       </div>
