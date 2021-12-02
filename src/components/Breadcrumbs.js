@@ -18,9 +18,3 @@
 // };
 
 // export default Breadcrumbs;
-
-{
-  /* <div>
-       <Breadcrumbs />
-     </div> */
-}
