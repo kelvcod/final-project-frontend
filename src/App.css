@@ -180,7 +180,6 @@
   object-fit: cover;
 }
 
-
 /* bogdan logo */
 .logo {
   padding-top: 0.45rem;
@@ -232,6 +231,7 @@
   position: absolute;
   top: -65px;
   min-width: 200px;
+}
 
 .related_services {
   flex-direction: row;
@@ -246,5 +246,7 @@
 .related_services_card {
   justify-content: space-between;
   text-justify: auto;
-
+}
+.search {
+  margin-top: 50px;
 }

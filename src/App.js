@@ -7,6 +7,7 @@ import { Switch, Route } from "react-router";
 import Service from "./components/Service";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Checkout from "./components/Checkout";
+import SearchBar from "./components/SearchBar";
 
 const App = () => {
   const [services, setServices] = useState();
@@ -28,6 +29,9 @@ const App = () => {
     <div>
       <div>
         <Navbar />
+      </div>
+      <div>
+        <SearchBar />
       </div>
       <Switch>
         {/* <Route path="/">
