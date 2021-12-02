@@ -30,6 +30,8 @@
   display: flex;
   justify-content: center;
   gap: 32px;
+  /* bogdan padding top btw nav and top row of cards */
+  padding-top: 30px;
   flex-wrap: wrap;
 }
 
@@ -44,6 +46,9 @@
   flex-direction: column;
   justify-content: space-around;
   border-radius: 30px;
+  /* bogdan font and weight added */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 .link {
@@ -55,33 +60,49 @@
 }
 
 #footer {
-  width: 100%;
+  /* width: 100%; */
   background-color: #134d40;
   margin-top: 50px;
 }
 
 .container_footer {
-  display: flex;
-  flex-wrap: nowrap;
+  /* Bogdan - nowrap made a large gap to the right side of the cards in mobile */
+  /* flex-wrap: nowrap; */
+  /* display: flex; */
+  display: inline;
   width: 100%;
   justify-content: space-evenly;
 }
 
 .service-image__wrap img.service_image {
-  min-width: 100%;
+  /* min-width: 100%;
   min-height: 100%;
   height: auto;
-  width: auto;
+  width: auto; */
+
+  /* bogdan centered and fit images */
+  min-height: 100%;
+  object-fit: cover;
+  width: 50%;
+  height: 50%;
 }
 
 .service-image__wrap {
   height: 250px;
   overflow: hidden;
-  object-fit: cover;
+  /* object-fit: cover; */
+  /* bogdan gap between img and card */
+  margin-top: 15px;
+  border-radius: 18px;
 }
 
 .service-card__title {
   margin-bottom: auto;
+  /* bogdan centered text and added font, weight and size */
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
 }
 .service-card__content {
   flex: 1 1 30%;
@@ -92,6 +113,9 @@
 .service-card__btn {
   margin-top: 16px;
   align-self: center;
+  /* bogdan added font, weight */
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 #my_btn {
   background-color: #134d40;
@@ -154,4 +178,57 @@
   width: 400px;
   height: auto;
   object-fit: cover;
+}
+
+/* bogdan logo */
+.logo {
+  padding-top: 0.45rem;
+  width: 70px;
+}
+/* bogdan font footer big */
+.white-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+/* bogdan font footer small */
+.grey-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+}
+/* bogdan font copyright */
+.footer-copyright {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+}
+/* navbar font */
+.homebtn,
+.ord,
+.lgn,
+.dropdown-trigger {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* .xyz {
+
+}
+
+.drop {
+
+} */
+
+/* .dropdown-content {
+} */
+
+/* .dropdown-trigger {
+  min-width: 150px;
+} */
+
+#dropdown1 {
+  position: absolute;
+  top: -65px;
+  min-width: 200px;
 }

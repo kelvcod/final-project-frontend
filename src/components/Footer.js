@@ -8,9 +8,9 @@ const Footer = () => {
           <div className="col l4 s12">
             <h5 className="white-text">Contact us</h5>
             <ul className="grey-text text-lighten-4">
-              <li>Address: </li>
-              <li>Email: </li>
-              <li>Phone: </li>
+              <li>Address: MVP Strasse 1, 10967 Berlin</li>
+              <li>Email: mvp@ymail.com</li>
+              <li>Phone: +49 176 12345678</li>
             </ul>
           </div>
           <div className="col l4 s12">
@@ -57,12 +57,7 @@ const Footer = () => {
       </div>
 
       <div className="footer-copyright">
-        <div className="container">
-          © 2021 Copyright
-          <a className="grey-text text-lighten-4 right" href="#!">
-            More Links
-          </a>
-        </div>
+        <div className="container">© 2021 Copyright</div>
       </div>
     </footer>
   );
