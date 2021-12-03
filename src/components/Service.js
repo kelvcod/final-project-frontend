@@ -19,7 +19,9 @@ const Service = () => {
   const { REACT_APP_BACKEND_URL } = process.env;
 
   useEffect(() => {
-    fetch(`${REACT_APP_BACKEND_URL}/services/${id}`)
+    fetch(
+      `${REACT_APP_BACKEND_URL}/services/${id}&search?query=${serviceId.queryParameter}`
+    )
       .then((res) => res.json())
       .then((data) => {
         setServiceId(data);
