@@ -6,7 +6,6 @@ import SimilarCategory from "./SimilarCategory";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SellerInfo from "./SellerInfo";
-//import Checkout from "./Checkout";
 
 // Import Swiper styles
 import "swiper/swiper-bundle.min.css";
@@ -25,7 +24,6 @@ const Service = () => {
         setServiceId(data);
       });
   }, [id]);
-  // console.log(serviceId);
 
   if (!serviceId) return null;
 
@@ -46,29 +44,28 @@ const Service = () => {
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="image"
+                  alt="service image"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="image"
+                  alt="service image"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="image"
+                  alt="service image"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="image"
+                  alt="service image"
                 />
               </SwiperSlide>
             </Swiper>
-            {/* <span className="card-title">{}</span> */}
           </div>
           <div className="card-content ">
             <h5 className="service_about">About this Gig</h5>
@@ -89,11 +86,16 @@ const Service = () => {
               Back to Home
             </Link>
             <Link
-              to={`/checkout`}
+              to={{
+                pathname: "/review",
+                // search: "?sort=name",
+                // hash: "#the-hash",
+                state: { serviceId },
+              }}
               className="waves-effect waves-light btn"
               id="proceed_checkout"
             >
-              Proceed to checkout
+              Order Service
             </Link>
           </div>
 
@@ -115,19 +117,3 @@ const Service = () => {
 };
 
 export default Service;
-
-{
-  /* <h3 className="seller-header">About The Seller</h3>
-        <img
-          src={`${REACT_APP_BACKEND_URL}${serviceId.image_user}`}
-          className="responsive-img circle"
-          
-          alt="image"
-        />
-        <p className="seller_name">
-          {serviceId.first_name} {serviceId.last_name}
-        </p>
-        <p className="seller_businessname">{serviceId.businees_name}</p>
-        <p className="seller_country">Country: {serviceId.country}</p>
-        <p className="seller_about">{serviceId.about}</p> */
-}

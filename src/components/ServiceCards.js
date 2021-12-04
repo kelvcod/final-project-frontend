@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ServiceCards = ({ service }) => {
-  const { id, image, description, price, title } = service;
+  const { id, image, price, title } = service;
   const { REACT_APP_BACKEND_URL } = process.env;
 
   return (
@@ -12,9 +12,8 @@ const ServiceCards = ({ service }) => {
         <img
           className="service_image"
           src={`${REACT_APP_BACKEND_URL}${image}`}
-          alt="image of srvice"
+          alt="image of service"
         />
-        {/* <span className="card-title">{}</span> */}
       </div>
       <div className="service-card__content">
         <h5 className="service-card__title">{title}</h5>

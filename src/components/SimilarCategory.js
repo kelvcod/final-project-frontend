@@ -20,10 +20,10 @@ const SimilarCategory = ({ serviceId: { id, category } }) => {
 
   return (
     <>
-      {similar.slice(0, 2).map((item) => {
+      {similar.slice(0, 2).map((item, index) => {
         return (
           <div className="related_services">
-            <ServiceCards key={item.id} service={item} />
+            <ServiceCards key={index} service={item} />
           </div>
         );
       })}

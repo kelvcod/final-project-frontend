@@ -9,6 +9,7 @@ const SellerInfo = ({ serviceId }) => {
               <img
                 src={`${REACT_APP_BACKEND_URL}${serviceId.image_user}`}
                 id="seller_picture"
+                alt="the sellers photo"
               />
               <span className="card-title">
                 {serviceId.first_name} {serviceId.last_name}
@@ -42,3 +43,19 @@ const SellerInfo = ({ serviceId }) => {
 };
 
 export default SellerInfo;
+
+{
+  /* <h3 className="seller-header">About The Seller</h3>
+        <img
+          src={`${REACT_APP_BACKEND_URL}${serviceId.image_user}`}
+          className="responsive-img circle"
+          
+          alt="image"
+        />
+        <p className="seller_name">
+          {serviceId.first_name} {serviceId.last_name}
+        </p>
+        <p className="seller_businessname">{serviceId.businees_name}</p>
+        <p className="seller_country">Country: {serviceId.country}</p>
+        <p className="seller_about">{serviceId.about}</p> */
+}

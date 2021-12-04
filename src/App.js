@@ -6,47 +6,67 @@ import Footer from "./components/Footer";
 import { Switch, Route } from "react-router";
 import Service from "./components/Service";
 import Breadcrumbs from "./components/Breadcrumbs";
-import Checkout from "./components/Checkout";
+import Card from "./components/checkout/Card";
+//import ApplePay from "./components/checkout/ApplePay";
+
+import Review from "./components/checkout/Review";
+import Login from "./components/Login";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
 
 const App = () => {
   const [services, setServices] = useState();
-  //const [ users, setUsers] = useState();
-  //const urlUsers = "https://mvp-finpro.herokuapp.com/users"
+  const [stripePromise, setStripePromise] = useState();
 
   const { REACT_APP_BACKEND_URL } = process.env;
+
+  useEffect(() => {
+    const getStripePromise = async () => {
+      const res = await fetch(`${REACT_APP_BACKEND_URL}/checkout/config`);
+      const { publishableKey } = await res.json();
+      const promise = await loadStripe(publishableKey);
+      setStripePromise(promise);
+    };
+    getStripePromise();
+  }, []);
 
   useEffect(() => {
     fetch(`${REACT_APP_BACKEND_URL}/services`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setServices(data);
-        //setUsers(data)
       });
   }, []);
+
+  if (!stripePromise) return null;
+
   return (
     <div>
       <div>
         <Navbar />
       </div>
       <Switch>
-        {/* <Route path="/">
-           <About />
-          </Route>
-          <Route path="/">
-            <Trending />
-          </Route>
-          <Route path="/">
-            <Contact />
-          </Route> */}
+        <Route path="/login">
+          <Login />
+        </Route>
         <Route exact path="/">
           <Home services={services} />
         </Route>
         <Route path="/services/:id">
-          <Service services={services} />
+          <Service />
         </Route>
         <Route path="/checkout">
-          <Checkout services={services} />
+          <Elements stripe={stripePromise}>
+            <Card />
+          </Elements>
+        </Route>
+        {/* <Route path="/apple-pay">
+          <Elements stripe={stripePromise}>
+            <ApplePay />
+          </Elements>
+        </Route> */}
+        <Route path="/review">
+          <Review />
         </Route>
       </Switch>
       <div>
