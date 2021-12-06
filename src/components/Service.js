@@ -31,12 +31,15 @@ const Service = () => {
 
   return (
     <div className="row" id="single_service">
-      <div className="col s12 m10 l8 xl8">
+      {/* <div className="col s12 m8 offset-m2"> */}
+      <div className="col s12 m8 offset-m2">
         <div className="card">
           <div className="serviceId_title">
-            <h4>I can offer you a Professional {serviceId.title}</h4>
+            <h4>
+              <b>I can offer you a Professional {serviceId.title}</b>
+            </h4>
           </div>
-          <div className="card-image card_swipe service-image__wrap">
+          <div className="card-image-service card_swipe service-image__wrap">
             <Swiper
               spaceBetween={30}
               slidesPerView={1}
@@ -104,10 +107,14 @@ const Service = () => {
           </div>
         </div>
       </div>
-      <div className="col s12">
+      <div>
+        <SellerInfo serviceId={serviceId} />
+      </div>
+      {/* <div className="col s12 m6 offset-m3"> */}
+      <div className="col s12 s6 offset-s3">
         <h5 className="related_text">Related offers form this category</h5>
         <SimilarCategory serviceId={serviceId} />
-        <SellerInfo serviceId={serviceId} />
+        {/* <SellerInfo serviceId={serviceId} /> */}
       </div>
       <hr />
     </div>
