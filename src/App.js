@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Home from "./components/Home";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
 import { Switch, Route } from "react-router";
 import Service from "./components/Service";
@@ -10,6 +10,9 @@ import Checkout from "./components/Checkout";
 import SearchBar from "./components/SearchBar";
 
 const App = () => {
+  console.log(window);
+  console.log(window.innerWidth);
+
   const [services, setServices] = useState();
   const [search, setSearch] = useState();
 
@@ -33,7 +36,13 @@ const App = () => {
 
   return (
     <div>
-      <Navbar />
+      <div>
+        <Navigation />
+      </div>
+      <div>
+        <SearchBar />
+      </div>
+
       <Switch>
         {/* <Route path="/">
            <About />
