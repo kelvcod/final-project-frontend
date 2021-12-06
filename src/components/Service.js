@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useParams, Switch, Route } from "react-router";
+import { useParams } from "react-router";
 
 import SimilarCategory from "./SimilarCategory";
 // Import Swiper React components
@@ -44,25 +44,25 @@ const Service = () => {
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="service image"
+                  alt="here is the service"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="service image"
+                  alt="here is the service"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="service image"
+                  alt="here is the service"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
-                  alt="service image"
+                  alt="here is the service"
                 />
               </SwiperSlide>
             </Swiper>

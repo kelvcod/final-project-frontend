@@ -35,7 +35,7 @@ const Navbar = () => {
               <a href="sass.html">Orders</a>{" "}
             </li>
             <li>
-              <a href="badges.html">Login</a>{" "}
+              <a href="/login">Login</a>{" "}
             </li>
             <li>
               <a

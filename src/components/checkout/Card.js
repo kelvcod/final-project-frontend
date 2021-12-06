@@ -12,7 +12,7 @@ const CardForm = () => {
 
   let location = useLocation();
   console.log(location);
-  const { category, business_name, image, price, title } =
+  const { id, category, business_name, image, price, title } =
     location.state.location.state.serviceId;
   console.log(category);
 
@@ -113,7 +113,7 @@ const CardForm = () => {
                       >
                         <img
                           src={`${REACT_APP_BACKEND_URL}${image}`}
-                          alt="image of service"
+                          alt="good service"
                         />
                       </div>
                       <p>
@@ -131,11 +131,11 @@ const CardForm = () => {
             </div>
             <div className="btn_links">
               <Link
-                to={`/`}
+                to={`../services/${id}`}
                 className="waves-effect waves-light btn"
                 id="back_home_pay"
               >
-                Back to Home
+                Back
               </Link>
             </div>
           </div>

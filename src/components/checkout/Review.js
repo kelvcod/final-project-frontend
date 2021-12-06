@@ -6,6 +6,7 @@ const Review = () => {
   let location = useLocation();
   console.log(location);
   const {
+    id,
     first_name,
     last_name,
     image_user,
@@ -34,7 +35,7 @@ const Review = () => {
               <img
                 id="user_image_review"
                 src={`${REACT_APP_BACKEND_URL}${image_user}`}
-                alt="Photo of the seller"
+                alt="Here is the seller"
               />
               <h6>
                 {first_name} {last_name}
@@ -50,7 +51,7 @@ const Review = () => {
             >
               <img
                 src={`${REACT_APP_BACKEND_URL}${image}`}
-                alt="image of service"
+                alt="here is the service"
               />
             </div>
             <p>
@@ -77,11 +78,11 @@ const Review = () => {
               </form>
               <div className="btn_links">
                 <Link
-                  to={`/`}
+                  to={`../services/${id}`}
                   className="waves-effect waves-light btn"
                   id="back_home_checkout"
                 >
-                  Back to Home
+                  Back
                 </Link>
 
                 <Link

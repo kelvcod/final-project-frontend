@@ -8,9 +8,12 @@ import Service from "./components/Service";
 import Breadcrumbs from "./components/Breadcrumbs";
 import Card from "./components/checkout/Card";
 //import ApplePay from "./components/checkout/ApplePay";
+import ContactSeller from "./components/checkout/ContactSeller";
+import MessageSent from "./components/MessageSent";
 
 import Review from "./components/checkout/Review";
 import Login from "./components/Login";
+import Register from "./components/Register";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
@@ -67,6 +70,18 @@ const App = () => {
         </Route> */}
         <Route path="/review">
           <Review />
+        </Route>
+        <Route path="/contact/seller">
+          <ContactSeller />
+        </Route>
+        <Route path="/send-message">
+          <MessageSent />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
+        <Route path="/register">
+          <Register />
         </Route>
       </Switch>
       <div>
