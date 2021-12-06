@@ -25,7 +25,10 @@ const App = () => {
   // console.log(window.innerWidth);
 
   const [services, setServices] = useState();
+
   const [stripePromise, setStripePromise] = useState();
+
+  const [search, setSearch] = useState();
 
   const { REACT_APP_BACKEND_URL } = process.env;
 
@@ -49,20 +52,31 @@ const App = () => {
 
   if (!stripePromise) return null;
 
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const restSearch = () => {
+    setSearch("");
+  };
+
   return (
     <div>
       <div>
         <Navigation />
       </div>
-      <div>
-        <SearchBar />
-      </div>
+
       <Switch>
         <Route path="/login">
           <Login />
         </Route>
         <Route exact path="/">
-          <Home services={services} />
+          <SearchBar
+            onHandleSearch={handleSearch}
+            search={search}
+            onResetSearch={restSearch}
+          />
+          <Home services={services} search={search} />
         </Route>
         <Route path="/services/:id">
           <Service />

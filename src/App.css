@@ -106,19 +106,27 @@ select {
   flex-direction: column;
 }
 
-#single_service {
-  margin-right: 450px;
-  max-width: 1500px;
+.card {
+  /* flex-direction: column; */
 }
 
-.related_text {
+/* Bogdan services card*/
+#single_service {
+  display: flex;
+  flex-direction: column;
+
+  /* margin-right: 450px;
+  max-width: 1500px; */
+}
+/* related category services page */
+/* .related_text {
   text-align: center;
   margin-right: 120px;
-}
+} */
 
-.related_services {
+/* .related_services {
   margin-left: 470px;
-}
+} */
 
 .row {
   display: flex;
@@ -165,7 +173,6 @@ select {
 .service-image__wrap img.service_image {
   min-height: 100%;
   object-fit: cover;
-  width: 50%;
   height: 50%;
 }
 
@@ -176,6 +183,14 @@ select {
   border-radius: 18px;
 }
 
+/* image in the services page */
+.card-image-service {
+  max-width: 250px;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
 .service-card__title {
   margin-bottom: auto;
   text-align: center;
@@ -183,13 +198,23 @@ select {
   font-weight: 600;
   font-size: 22px;
 }
+
+.serviceId_title {
+  padding-top: 2px;
+  text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+
 .service-card__content {
   flex: 1 1 30%;
   display: flex;
   flex-direction: column;
   padding: 0 16px;
 }
-.service-card__btn {
+.service-card__btn,
+.btn_links {
   margin-top: 16px;
   align-self: center;
   font-family: "Montserrat", sans-serif;
@@ -213,7 +238,7 @@ select {
 }
 
 .card-seller {
-  width: 330px;
+  width: 299px;
 }
 
 .seller-info {
@@ -228,8 +253,9 @@ select {
 }
 
 .service_price {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
   font-weight: bold;
-  font-size: 20px;
 }
 .service_description {
   line-height: 25px;

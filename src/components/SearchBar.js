@@ -1,29 +1,25 @@
-import React, { useState } from "react";
-import Home from "./Home";
-import Service from "./Service";
+import React from "react";
 
-const SearchBar = () => {
-  const [search, setSearch] = useState();
-
-  function onSubmit(e) {
-    e.preventDefault();
-    setSearch(document.getElementById("input-field").value);
-  }
-
+const SearchBar = ({ searchValue, onResetSearch, onHandleSearch }) => {
   return (
     <nav className="nav-searchbar">
       <div className="nav-wrapper search teal darken-4">
-        <form onSubmit={onSubmit}>
-          <div className="input-field">
-            <input id="search" type="search" required />
-            <label className="label-icon" for="search">
-              <i className="material-icons">search</i>
-            </label>
-            <i className="material-icons">close</i>
-          </div>
-        </form>
+        <div className="input-field">
+          <input
+            id="search"
+            type="search"
+            name="search"
+            value={searchValue}
+            onChange={onHandleSearch}
+          />
+          <label className="label-icon" for="search">
+            <i className="material-icons">search</i>
+          </label>
+          <i className="material-icons" onClick={onResetSearch}>
+            close
+          </i>
+        </div>
       </div>
-      <Home queryParameter={search} />
     </nav>
   );
 };
