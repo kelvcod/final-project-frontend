@@ -70,7 +70,6 @@
 .service-image__wrap img.service_image {
   min-height: 100%;
   object-fit: cover;
-  width: 50%;
   height: 50%;
 }
 

@@ -1,16 +1,29 @@
 import React from "react";
+import Service from "./Service";
 //import { useParams } from 'react-router';
 import ServiceCard from "./ServiceCards";
 
-const Home = ({ services }) => {
+const Home = ({ services, search }) => {
   //const {id} = useParams();
   if (!services) {
     return <h1>Loading...</h1>;
   }
 
+  const filteredServices = services.filter((service) => {
+    if (
+      service.title.toLowerCase().includes(search) ||
+      service.description.toLowerCase().includes(search)
+    ) {
+      return service;
+    }
+    return false;
+  });
+
+  const servicesToDisplay = !search ? services : filteredServices;
+
   return (
     <div className="row">
-      {services.map((service, index) => (
+      {servicesToDisplay.map((service, index) => (
         <ServiceCard service={service} key={index} />
       ))}
     </div>

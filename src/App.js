@@ -11,8 +11,7 @@ import SearchBar from "./components/SearchBar";
 
 const App = () => {
   const [services, setServices] = useState();
-  //const [ users, setUsers] = useState();
-  //const urlUsers = "https://mvp-finpro.herokuapp.com/users"
+  const [search, setSearch] = useState();
 
   const { REACT_APP_BACKEND_URL } = process.env;
 
@@ -20,19 +19,21 @@ const App = () => {
     fetch(`${REACT_APP_BACKEND_URL}/services`)
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
         setServices(data);
-        //setUsers(data)
       });
-  }, []);
+  }, [REACT_APP_BACKEND_URL]);
+
+  const handleSearch = (event) => {
+    setSearch(event.target.value);
+  };
+
+  const restSearch = () => {
+    setSearch("");
+  };
+
   return (
     <div>
-      <div>
-        <Navbar />
-      </div>
-      <div>
-        <SearchBar />
-      </div>
+      <Navbar />
       <Switch>
         {/* <Route path="/">
            <About />
@@ -44,7 +45,12 @@ const App = () => {
             <Contact />
           </Route> */}
         <Route exact path="/">
-          <Home services={services} />
+          <SearchBar
+            onHandleSearch={handleSearch}
+            search={search}
+            onResetSearch={restSearch}
+          />
+          <Home services={services} search={search} />
         </Route>
         <Route path="/services/:id">
           <Service services={services} />
