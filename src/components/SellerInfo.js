@@ -18,9 +18,7 @@ const SellerInfo = ({ serviceId }) => {
   return (
     <div className="seller-info">
       <div className="row">
-        {/* <div className="col s12 m3"> */}
-        {/* <div className="col s12 m4 offset-m4"> */}
-        <div className="col s12 s6 offset-s3">
+        <div className="col s12 m7">
           <h5 className="related_text">About and contact the seller</h5>
           <div className="card card-seller">
             <div className="card-image responsive-img">
