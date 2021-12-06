@@ -1,5 +1,20 @@
+import { Link } from "react-router-dom";
+
 const SellerInfo = ({ serviceId }) => {
   const { REACT_APP_BACKEND_URL } = process.env;
+  const {
+    id,
+    first_name,
+    last_name,
+    image_user,
+    category,
+    business_name,
+    image,
+    price,
+    title,
+    about,
+    country,
+  } = serviceId;
   return (
     <div className="seller-info">
       <div className="row">
@@ -7,22 +22,38 @@ const SellerInfo = ({ serviceId }) => {
           <div className="card card-seller">
             <div className="card-image responsive-img">
               <img
-                src={`${REACT_APP_BACKEND_URL}${serviceId.image_user}`}
+                src={`${REACT_APP_BACKEND_URL}${image_user}`}
                 id="seller_picture"
+                alt="here is the seller"
               />
               <span className="card-title">
-                {serviceId.first_name} {serviceId.last_name}
+                {first_name} {last_name}
               </span>
-              <a className="btn-floating halfway-fab waves-effect waves-light red">
+              {/* <Link
+                to="/contact/seller"
+                className="btn-floating halfway-fab waves-effect waves-light red"
+              >
                 <i className="material-icons">person</i>
-              </a>
+              </Link> */}
+
+              <Link
+                to={{
+                  pathname: "/contact/seller",
+                  // search: "?sort=name",
+                  // hash: "#the-hash",
+                  state: { serviceId },
+                }}
+                className="btn-floating halfway-fab waves-effect waves-light red"
+              >
+                <i className="material-icons">person</i>
+              </Link>
             </div>
             <div className="card-content">
               <p className="seller_businessname">
-                <b>{serviceId.business_name}</b>
+                <b>{business_name}</b>
               </p>
               <hr />
-              <p className="seller_about">{serviceId.about}</p>
+              <p className="seller_about">{about}</p>
               <p>
                 I am a very simple card. I am good at containing small bits of
                 information. I am convenient because I require little markup to
@@ -31,7 +62,7 @@ const SellerInfo = ({ serviceId }) => {
               <hr />
 
               <p className="seller_country">
-                <em>Country: {serviceId.country}</em>
+                <em>Country: {country}</em>
               </p>
             </div>
           </div>

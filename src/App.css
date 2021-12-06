@@ -1,3 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway&display=swap");
+
+:root {
+  --light-grey: #f6f9fc;
+  --dark-terminal-color: #0a2540;
+  --accent-color: #635bff;
+  --radius: 3px;
+}
+
+.card_container {
+  padding: 20px;
+  font-family: "Raleway";
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-size: 1.2em;
+  color: var(--dark-terminal-color);
+  width: 580px;
+}
+
+.card_form > * {
+  margin: 10px 0;
+}
+
+.card_button {
+  background-color: var(--accent-color);
+  background: var(--accent-color);
+  border-radius: var(--radius);
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: block;
+}
+.card_button:hover {
+  filter: contrast(115%);
+}
+.card_button:active {
+  transform: translateY(0px) scale(0.98);
+  filter: brightness(0.9);
+}
+.card_button:disabled {
+  opacity: 0.5;
+  cursor: none;
+}
+
+input,
+select {
+  display: block;
+  font-size: 1.1em;
+  width: 100%;
+}
+
+label {
+  display: block;
+}
+
+a {
+  color: var(--accent-color);
+  font-weight: 900;
+}
+
+small {
+  font-size: 0.6em;
+}
+
+fieldset,
+input,
+select {
+  border: 1px solid #efefef;
+}
+
+#payment-form {
+  border: #f6f9fc solid 1px;
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 30px 50px -20px rgb(50 50 93 / 25%),
+    0 30px 60px -30px rgb(0 0 0 / 30%);
+}
+
+#messages {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New";
+  background-color: #0a253c;
+  color: #00d924;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: var(--radius);
+  font-size: 0.7em;
+}
+
 .rows {
   flex-direction: column;
   align-items: center;
@@ -59,6 +153,7 @@
 #footer {
   background-color: #134d40;
   margin-top: 50px;
+  margin-bottom: 0;
 }
 
 .container_footer {
@@ -151,10 +246,38 @@
   background-color: #134d40;
 }
 
+#checkout {
+  margin: 30px 30px 30px 0;
+  background-color: #134d40;
+}
+
 .btn_links {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+
+#image_review {
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+#user_image_review {
+  width: 60px;
+  border-radius: 50px;
+  border: 2px groove #01251c;
+}
+
+#back_home_checkout {
+  margin: 30px 0 30px 30px;
+  background-color: #134d40;
+}
+.checkout_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .card_swipe {
@@ -162,6 +285,7 @@
   height: auto;
   object-fit: cover;
 }
+
 
 .logo {
   padding-top: 0.45rem;
@@ -223,4 +347,153 @@
   margin: 0 auto;
   width: 30%;
   border-radius: 30px;
+}
+.paymentForm_container {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+/* #image_pay {
+  width: 400px;
+  height: 300px;
+  object-fit: cover;
+} */
+
+#image_pay {
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: 300px;
+}
+
+#service_summary {
+  width: 400px;
+  margin: 150px 30px;
+}
+
+/* .pay_similar {
+  display: flex;
+  flex-wrap: nowrap;
+  width: auto;
+} */
+
+#back_home_pay {
+  margin: 30px 0 30px 30px;
+  background-color: #134d40;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: #3e4d40;
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  position: relative;
+  left: 250px;
+}
+
+.send_message {
+  text-align: justify;
+}
+
+#back_btn {
+  margin: 100px 430px 0 0;
+  background-color: #134d40;
+}
+
+.submit_contact {
+  position: relative;
+  bottom: 30px;
+  margin: 0 0 20px 420px;
+  background-color: #134d40;
+  color: white;
+  padding: 8px 8px 8px 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-style: small-caps;
+}
+#name {
+  width: 500px;
+  border: 2px inset rgb(129, 127, 127);
+  font-size: 15px;
+}
+#message {
+  width: 500px;
+  font-size: 15px;
+  border: 2px inset rgb(129, 127, 127);
+}
+#buyerEmail {
+  width: 500px;
+  font-size: 15px;
+  border: 2px inset rgb(129, 127, 127);
+}
+
+#contact-page-seller {
+  position: relative;
+  top: 450px;
+  right: 70px;
+}
+
+.hr_line {
+  width: 400px;
+  position: relative;
+  right: 200px;
+}
+
+#login {
+  width: 80%;
+}
+
+.login_btn {
+  position: relative;
+  left: 290px;
+  margin: 100px 0 30px 0;
+  background-color: #134d40;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.login-text {
+  position: relative;
+  left: 185px;
+}
+.register-text {
+  position: relative;
+  left: 390px;
+  top: 50px;
+}
+
+.google_sign_in {
+  width: 260px;
+  position: relative;
+  top: 10px;
+  left: 760px;
+}
+
+.google_sign_in_login {
+  width: 260px;
+  position: relative;
+  top: 430px;
+  right: 470px;
+}
+
+.register_container {
+  position: relative;
+  right: 378px;
+}
+
+#register {
+  background-color: #134d40;
+}
+
+#google_sign_in_link {
+  background-color: #134d40;
+}
+.form-group {
+  font-size: 15px;
+
 }
