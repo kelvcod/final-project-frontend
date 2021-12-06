@@ -131,6 +131,7 @@ select {
 .row {
   display: flex;
   justify-content: center;
+  gap: 32px;
   padding-top: 30px;
   flex-wrap: wrap;
 }
@@ -174,6 +175,7 @@ select {
   min-height: 100%;
   object-fit: cover;
   height: 50%;
+  height: 50%;
 }
 
 .service-image__wrap {
@@ -187,7 +189,7 @@ select {
 .card-image-service {
   max-width: 250px;
   min-width: 100%;
-  min-height: 100%;
+  /* min-height: 100%; */
   object-fit: cover;
 }
 
@@ -242,7 +244,6 @@ select {
 }
 
 .seller-info {
-  margin-right: 260px;
 }
 
 #seller_picture {
@@ -312,7 +313,6 @@ select {
   object-fit: cover;
 }
 
-
 .logo {
   padding-top: 0.45rem;
   width: 70px;
@@ -356,6 +356,7 @@ select {
   justify-content: space-around;
   width: 400px;
   float: left;
+  justify-content: space-between;
   text-justify: auto;
 }
 
@@ -521,5 +522,4 @@ select {
 }
 .form-group {
   font-size: 15px;
-
 }
