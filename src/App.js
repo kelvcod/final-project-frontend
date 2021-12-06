@@ -39,9 +39,6 @@ const App = () => {
       <div>
         <Navigation />
       </div>
-      <div>
-        <SearchBar />
-      </div>
 
       <Switch>
         {/* <Route path="/">
