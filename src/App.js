@@ -21,8 +21,8 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 
 const App = () => {
-  console.log(window);
-  console.log(window.innerWidth);
+  // console.log(window);
+  // console.log(window.innerWidth);
 
   const [services, setServices] = useState();
   const [stripePromise, setStripePromise] = useState();
