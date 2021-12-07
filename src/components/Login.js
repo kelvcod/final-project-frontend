@@ -8,10 +8,11 @@ const Login = () => {
   return (
     <div>
       <div className="container mt-5">
+        {/* <div className="col s12 m8 offset-m2"> */}
         <h5 className="login-text">Login to view your profile and more!</h5>
-
-        <div className="row">
-          <div className="col s12 m10 l8 xl8">
+        <div className="row_login">
+          {/* <div className="col s12 m10 l8 xl8"> */}
+          <div className="col s12 m8 offset-m2">
             <div className="card" id="login">
               <div className="card-body">
                 {/* Makes POST request to /login route  */}
@@ -46,7 +47,7 @@ const Login = () => {
             </div>
           </div>
 
-          <div className="col-sm-4 google_sign_in_login">
+          {/* <div className="col s12 google_sign_in_login">
             <div className="card ">
               <div className="card-body">
                 <a
@@ -60,7 +61,7 @@ const Login = () => {
                 </a>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="register_container">
             <p className="no_acc_text">Don't have an account yet?</p>
