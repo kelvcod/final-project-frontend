@@ -65,9 +65,10 @@ const ContactSeller = () => {
 
   return (
     <div className="row" id="single_service">
-      <div className="col s12 m10 l8 xl8">
+      {/* <div className="col s12 m10 l8 xl8"> */}
+      <div className="col s12 m8 offset-m2">
         <div
-          className="card-image card_swipe service-image__wrap"
+          className="card-image_contact-seller card_swipe seller-image__wrap"
           id="contact-page-seller"
         >
           <img
@@ -75,32 +76,31 @@ const ContactSeller = () => {
             src={`${REACT_APP_BACKEND_URL}${image_user}`}
             alt="Here is the seller"
           />
-          <h6>
-            {first_name} {last_name}
-          </h6>
-          <p>
-            <b>{business_name}</b>
-          </p>
-          <hr className="hr_line" />
-          <p>
-            <b>Please include:</b>
-          </p>
-          <ul>
-            <li>Project description</li>
-            <li>Specific instructions</li>
-            <li>Relevant files (if any)</li>
-            <li>Your budget</li>
-          </ul>
+          <div className="contact-seller-info">
+            <h4>
+              {first_name} {last_name}
+            </h4>
+            <p>
+              <b>{business_name}</b>
+            </p>
+            <hr className="hr_line" />
+            <p>
+              <b>Please include:</b>
+            </p>
+            <ul>
+              <li>Project description</li>
+              <li>Specific instructions</li>
+              <li>Relevant files (if any)</li>
+              <li>Your budget</li>
+            </ul>
+          </div>
         </div>
+        {/* form start */}
         <div className="serviceId_title">
-          <form className="form" onSubmit={handleSubmit}>
+          <form className="form_contact-seller" onSubmit={handleSubmit}>
             <br />
             <h5 className="send_message">Send a message to the seller</h5>
 
-            <div>
-              <label htmlFor="message">Message:</label>
-              <textarea id="message" required />
-            </div>
             <div>
               <label htmlFor="name"> Name: </label>
               <input type="text" id="name" required />
@@ -110,27 +110,33 @@ const ContactSeller = () => {
               <input type="email" id="buyerEmail" required />
             </div>
             <div>
+              <label htmlFor="message">Message:</label>
+              <textarea id="message" required />
+            </div>
+            <div>
               <label htmlFor="file">Upload Your File:</label>
               <input
                 type="file"
                 id="file"
-                name="file"
+                className="file"
                 onChange={onChangeHandler}
                 // multiple
               />
             </div>
             <div>
-              <Link
-                className="service-card__btn waves-effect waves-light btn "
-                id="back_btn"
-                to={`../services/${id}`}
-              >
-                back
-              </Link>
+              <div className="seller-btns">
+                <Link
+                  className="service-card__btn waves-effect waves-light btn "
+                  id="back_btn"
+                  to={`../services/${id}`}
+                >
+                  back
+                </Link>
+              </div>
+              <button className="submit_contact" type="submit">
+                {status}
+              </button>
             </div>
-            <button className="submit_contact" type="submit">
-              {status}
-            </button>
           </form>
         </div>
       </div>
