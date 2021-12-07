@@ -106,17 +106,10 @@ select {
   flex-direction: column;
 }
 
-.card {
-  /* flex-direction: column; */
-}
-
 /* Bogdan services card*/
 #single_service {
   display: flex;
   flex-direction: column;
-
-  /* margin-right: 450px;
-  max-width: 1500px; */
 }
 /* related category services page */
 .related_text {
@@ -315,18 +308,6 @@ p {
   margin-bottom: 20px;
 }
 
-#image_review {
-  height: auto;
-  width: auto;
-  max-width: 300px;
-  max-height: 300px;
-}
-#user_image_review {
-  width: 60px;
-  border-radius: 50px;
-  border: 2px groove #01251c;
-}
-
 #back_home_checkout {
   margin: 30px 0 30px 30px;
   background-color: #134d40;
@@ -375,7 +356,9 @@ p {
 .login_btn,
 #register,
 .no_acc_text,
-.form-group {
+.form-group,
+#checkout,
+#back_home_checkout {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -619,4 +602,41 @@ p {
 }
 #register {
   background-color: #134d40;
+}
+
+/* review page */
+.card-image-review {
+  height: 50%;
+  text-align: center;
+  display: block;
+}
+#user_image_review {
+  border-radius: 50px;
+  border: 2px groove #01251c;
+  margin-top: 30px;
+}
+#image_review {
+  display: inline-flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.review-category p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  margin-top: 0px;
+}
+.review-seller h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+.review-seller p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
