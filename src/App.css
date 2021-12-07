@@ -178,7 +178,7 @@ select {
   min-height: 100%;
   object-fit: cover;
   height: 50%;
-  width: 50%;
+  /* width: 50%; */
 }
 
 .service-image__wrap {
