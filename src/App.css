@@ -119,10 +119,13 @@ select {
   max-width: 1500px; */
 }
 /* related category services page */
-/* .related_text {
+.related_text {
   text-align: center;
-  margin-right: 120px;
-} */
+}
+.related_text_seller {
+  text-align: center;
+  margin-bottom: 35px;
+}
 
 /* .related_services {
   margin-left: 470px;
@@ -175,7 +178,7 @@ select {
   min-height: 100%;
   object-fit: cover;
   height: 50%;
-  height: 50%;
+  width: 50%;
 }
 
 .service-image__wrap {
@@ -187,10 +190,10 @@ select {
 
 /* image in the services page */
 .card-image-service {
-  max-width: 250px;
-  min-width: 100%;
-  /* min-height: 100%; */
-  object-fit: cover;
+  height: 50%;
+  text-align: center;
+  padding: 5px;
+  display: block;
 }
 
 .service-card__title {
@@ -227,23 +230,31 @@ select {
 }
 
 .service_about {
-  margin: 0 0 40px 5px;
+  margin: 0 0 40px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
 }
 
 .service_title {
-  margin: 0 0 40px 5px;
+  margin: 0 0 30px 0px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  text-align: center;
   font-style: italic;
 }
-
-.serviceId_title {
-  margin: 0 0 20px 30px;
-}
-
 .card-seller {
   width: 299px;
 }
 
 .seller-info {
+  display: flex;
+  justify-content: center;
+  /* gap: 32px; */
+  /* padding-top: 30px; */
+  /* flex-wrap: wrap; */
 }
 
 #seller_picture {
@@ -254,13 +265,31 @@ select {
 }
 
 .service_price {
+  padding: 24px 24px;
+  border-top: solid;
+  border-width: 0.5px;
+  border-color: rgb(223, 223, 223);
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-weight: bold;
+  text-align: center;
 }
 .service_description {
   line-height: 25px;
   margin: 0 30px 30px 30px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-align: center;
+}
+/* SellerInfo fonts */
+.seller_businessname {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+.seller_about,
+p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
 }
 
 #proceed_checkout {
@@ -307,11 +336,11 @@ select {
   align-items: center;
 }
 
-.card_swipe {
+/* .card_swipe {
   width: 400px;
   height: auto;
   object-fit: cover;
-}
+} */
 
 .logo {
   padding-top: 0.45rem;
@@ -361,8 +390,11 @@ select {
 }
 
 .related_services_card {
-  justify-content: space-between;
-  text-justify: auto;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  padding-top: 30px;
+  flex-wrap: wrap;
 }
 .search {
   margin-top: 50px;
