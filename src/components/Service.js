@@ -112,12 +112,9 @@ const Service = () => {
       <div>
         <SellerInfo serviceId={serviceId} />
       </div>
-      {/* <div className="col s12 m6 offset-m3"> */}
-      {/* <div className="col s12 m8 offset-m2"> */}
       <div className="col s12">
-        <h5 className="related_text">Related offers form this category</h5>
+        <h5 className="related_text">Related offers from this category</h5>
         <SimilarCategory serviceId={serviceId} />
-        {/* <SellerInfo serviceId={serviceId} /> */}
       </div>
       <hr />
     </div>

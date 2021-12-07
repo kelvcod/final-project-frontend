@@ -586,3 +586,22 @@ p {
   cursor: pointer;
   font-style: small-caps;
 }
+/* msg-forwarded page */
+#msg-forwarded {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  min-height: 70vh;
+}
+.msg-sent-font h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+.btn_links-msg-sent {
+  margin-top: 80px;
+  align-self: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
