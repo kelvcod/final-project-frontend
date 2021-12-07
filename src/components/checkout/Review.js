@@ -20,7 +20,8 @@ const Review = () => {
 
   return (
     <div className="row" id="single_service">
-      <div className="col s12 m10 l8 xl8">
+      {/* <div className="col s12 m10 l8 xl8"> */}
+      <div className="col s12 m8 offset-m2">
         <div className="card">
           <div className="serviceId_title">
             <br />
@@ -31,7 +32,7 @@ const Review = () => {
             </h6>
             <br />
 
-            <div className="card-image card_swipe service-image__wrap">
+            {/* <div className="card-image-review card_swipe service-image__wrap">
               <img
                 id="user_image_review"
                 src={`${REACT_APP_BACKEND_URL}${image_user}`}
@@ -43,24 +44,41 @@ const Review = () => {
               <p>
                 <b>{business_name}</b>
               </p>
-            </div>
+            </div> */}
 
             <div
               className="card-image card_swipe service-image__wrap"
               id="image_review"
             >
+              <p>
+                <b>{title}</b>
+              </p>
               <img
                 src={`${REACT_APP_BACKEND_URL}${image}`}
                 alt="here is the service"
               />
             </div>
-            <p>
-              <b>{title}</b>
-            </p>
-            <p>
-              Category: <i>{category}</i>
-            </p>
+            <div className="review-category">
+              <p>
+                Category: <i>{category}</i>
+              </p>
+            </div>
             <b>${price}</b>
+            <div className="card-image-review card_swipe service-image__wrap">
+              <img
+                id="user_image_review"
+                src={`${REACT_APP_BACKEND_URL}${image_user}`}
+                alt="Here is the seller"
+              />
+              <div className="review-seller">
+                <h6>
+                  {first_name} {last_name}
+                </h6>
+                <p>
+                  <b>{business_name}</b>
+                </p>
+              </div>
+            </div>
             <hr />
 
             <div>
