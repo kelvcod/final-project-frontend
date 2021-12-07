@@ -17,9 +17,9 @@ const SellerInfo = ({ serviceId }) => {
   } = serviceId;
   return (
     <div className="seller-info">
-      <div className="row">
-        <div className="col s12 m7">
-          <h5 className="related_text">About and contact the seller</h5>
+      <div className="seller_info_row">
+        <div className="col s12">
+          <h5 className="related_text_seller">About and contact the seller</h5>
           <div className="card card-seller">
             <div className="card-image responsive-img">
               <img
