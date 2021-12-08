@@ -538,6 +538,9 @@ p {
   /* display: block; */
   /* flex-direction: column; */
   text-align: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
 }
 .card-body {
   text-align: center;
@@ -648,4 +651,11 @@ p {
   max-width: 80px;
   display: inline-flex;
   flex-direction: column;
+}
+/* registration page */
+#file {
+  font-size: 12px;
+  margin-bottom: 20px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
 }
