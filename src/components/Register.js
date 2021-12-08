@@ -16,7 +16,7 @@ const Register = () => {
 
   return (
     <div class="container mt-5">
-      <h5 className="register-text">Register</h5>
+      {/* <h5 className="register-text">Register</h5>
       <div class="col-sm-4 google_sign_in ">
         <div class="card social-block">
           <div class="card-body">
@@ -31,9 +31,9 @@ const Register = () => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="row">
-        <div className="col s12 m10 l8 xl8">
+        <div className="col s12 m8 offset-m2">
           <div className="card" id="login">
             <div className="card-body">
               {/* Makes POST request to /register route */}
