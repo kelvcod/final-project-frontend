@@ -72,64 +72,68 @@ const CardForm = () => {
   };
   return (
     <div className="row" id="single_service">
-      <div className="col s12 m10 l8 xl8">
+      <div className="col s12 m8 offset-m2">
         <div className="card">
           <div className="serviceId_title">
             <div className="paymentForm_container">
-              <div className="card_container">
-                <h5>Complete the checkout process</h5>
-                <form
-                  id="payment-form"
-                  className="card_form"
-                  onSubmit={handleSubmit}
-                >
-                  <label htmlFor="card">All fields are required</label>
-                  <CardElement id="card" />
-                  <input type="text" name="name" placeholder="Full Name" />
-                  <input
-                    label="Email"
-                    id="outlined-email-input"
-                    type="email"
-                    required
-                    placeholder="email"
-                  />
-                  <p>
-                    You will recieve notifications and receipts on this email
-                  </p>
-                  <button type="submit" className="card_button">
-                    Pay
-                  </button>
-                </form>
-                <StatusMessages messages={messages} />
-              </div>
               <div className="row" id="service_summary">
-                <div className="col s12 m10 l8 xl8">
-                  <div className="card_display_pay">
-                    <div className="serviceId_title">
-                      <br />
-                      <div
-                        className="card-image card_swipe service-image__wrap"
-                        id="image_pay"
-                      >
-                        <img
-                          src={`${REACT_APP_BACKEND_URL}${image}`}
-                          alt="good service"
-                        />
-                      </div>
-                      <p>
-                        <b>{title}</b>
-                      </p>
-                      <p>
-                        <b>{business_name}</b>
-                      </p>
-                      <b>Total: ${price}</b>
-                      <hr />
+                <div className="card_display_pay">
+                  <div className="serviceId_title">
+                    <div className="title-review">
+                      <h5>Complete the checkout process</h5>
                     </div>
+                    <br />
+                    <div
+                      className="card-image card_swipe service-image__wrap"
+                      id="image_pay"
+                    >
+                      <img
+                        src={`${REACT_APP_BACKEND_URL}${image}`}
+                        alt="good service"
+                      />
+                    </div>
+                    <p>
+                      <b>{title}</b>
+                    </p>
+                    <div className="business-name-review">
+                      <h6>
+                        <b>{business_name}</b>
+                      </h6>
+                    </div>
+                    <b>Total: ${price}</b>
+                    <hr />
                   </div>
                 </div>
               </div>
+              <div className="card_container">
+                <div className="col s12 m8 offset-m2">
+                  <form
+                    id="payment-form"
+                    className="card_form"
+                    onSubmit={handleSubmit}
+                  >
+                    <label htmlFor="card">All fields are required</label>
+                    <CardElement id="card" />
+                    <input type="text" name="name" placeholder="Full Name" />
+                    <input
+                      label="Email"
+                      id="outlined-email-input"
+                      type="email"
+                      required
+                      placeholder="Email"
+                    />
+                    <p>
+                      You will recieve notifications and receipts on this email
+                    </p>
+                    <button type="submit" className="card_button">
+                      Pay
+                    </button>
+                  </form>
+                  <StatusMessages messages={messages} />
+                </div>
+              </div>
             </div>
-            <div className="btn_links">
+            <div className="btn_links-pay">
               <Link
                 to={`../services/${id}`}
                 className="waves-effect waves-light btn"

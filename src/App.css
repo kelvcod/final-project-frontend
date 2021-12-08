@@ -7,34 +7,10 @@
   --radius: 3px;
 }
 
-.card_container {
-  padding: 20px;
-  font-family: "Raleway";
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  font-size: 1.2em;
-  color: var(--dark-terminal-color);
-  width: 580px;
-}
-
 .card_form > * {
   margin: 10px 0;
 }
 
-.card_button {
-  background-color: var(--accent-color);
-  background: var(--accent-color);
-  border-radius: var(--radius);
-  color: white;
-  border: 0;
-  padding: 12px 16px;
-  margin-top: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  display: block;
-}
 .card_button:hover {
   filter: contrast(115%);
 }
@@ -358,7 +334,10 @@ p {
 .no_acc_text,
 .form-group,
 #checkout,
-#back_home_checkout {
+#back_home_checkout,
+#back_home_pay,
+#back_home,
+#proceed_checkout {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -398,10 +377,6 @@ p {
   width: 30%;
   border-radius: 30px;
 }
-.paymentForm_container {
-  display: flex;
-  flex-wrap: nowrap;
-}
 
 /* #image_pay {
   width: 400px;
@@ -409,28 +384,11 @@ p {
   object-fit: cover;
 } */
 
-#image_pay {
-  height: auto;
-  width: auto;
-  max-width: 300px;
-  max-height: 300px;
-}
-
-#service_summary {
-  width: 400px;
-  margin: 150px 30px;
-}
-
 /* .pay_similar {
   display: flex;
   flex-wrap: nowrap;
   width: auto;
 } */
-
-#back_home_pay {
-  margin: 30px 0 30px 30px;
-  background-color: #134d40;
-}
 
 .register-text {
   position: relative;
@@ -632,11 +590,62 @@ p {
 }
 .review-seller h6 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 600;
   font-size: 22px;
 }
 .review-seller p {
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 14px;
+}
+/* payment page */
+#payment-form {
+  margin-top: 0px;
+}
+
+#image_pay {
+  display: inline-flex;
+  height: auto;
+  width: auto;
+  max-width: 300px;
+  max-height: auto;
+}
+.business-name-review h6 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+.title-review h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 25px;
+}
+.card_container {
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  font-size: 12px.2em;
+  color: var(--dark-terminal-color);
+}
+.card_button {
+  background-color: var(--accent-color);
+  background: var(--accent-color);
+  border-radius: var(--radius);
+  color: white;
+  border: 0;
+  padding: 12px 16px;
+  margin-top: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  /* display: block; */
+}
+
+#back_home_pay {
+  display: block;
+  margin: 30px 0px 40px;
+  background-color: #134d40;
+}
+.btn_links-pay {
+  max-width: 80px;
+  display: inline-flex;
+  flex-direction: column;
 }
