@@ -1,6 +1,6 @@
 import React from "react";
 
-const SearchBar = ({ searchValue, onResetSearch, onHandleSearch }) => {
+const SearchBar = ({ search, onResetSearch, onHandleSearch }) => {
   return (
     <nav className="nav-searchbar">
       <div className="nav-wrapper search teal darken-4">
@@ -9,7 +9,7 @@ const SearchBar = ({ searchValue, onResetSearch, onHandleSearch }) => {
             id="search"
             type="search"
             name="search"
-            value={searchValue}
+            value={search}
             onChange={onHandleSearch}
           />
           <label className="label-icon" for="search">

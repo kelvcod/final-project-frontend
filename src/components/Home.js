@@ -1,5 +1,5 @@
 import React from "react";
-import Service from "./Service";
+// import Service from "./Service";
 //import { useParams } from 'react-router';
 import ServiceCard from "./ServiceCards";
 
@@ -11,8 +11,8 @@ const Home = ({ services, search }) => {
 
   const filteredServices = services.filter((service) => {
     if (
-      service.title.toLowerCase().includes(search) ||
-      service.description.toLowerCase().includes(search)
+      service.title.toLowerCase().includes(search.toLowerCase()) ||
+      service.description.toLowerCase().includes(search.toLowerCase())
     ) {
       return service;
     }

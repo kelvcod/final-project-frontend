@@ -18,6 +18,13 @@ const Service = () => {
   const { REACT_APP_BACKEND_URL } = process.env;
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
+  useEffect(() => {
     fetch(`${REACT_APP_BACKEND_URL}/services/${id}`)
       .then((res) => res.json())
       .then((data) => {
@@ -29,7 +36,6 @@ const Service = () => {
 
   return (
     <div className="row" id="single_service">
-      {/* <div className="col s12 m8 offset-m2"> */}
       <div className="col s12 m8 offset-m2">
         <div className="card">
           <div className="serviceId_title">
@@ -102,11 +108,20 @@ const Service = () => {
             </Link>
           </div>
 
-          {/* <div className="card-action link"> */}
-          <div>
-            <p className="service_price">${serviceId.price}</p>
+          <div className="service_price-container">
+            {/* <p className="service_price">${serviceId.price}</p> */}
+            <Link
+              to={{
+                pathname: "/review",
+                // search: "?sort=name",
+                // hash: "#the-hash",
+                state: { serviceId },
+              }}
+              class="btn-floating btn-large red pulse service_price"
+            >
+              ${serviceId.price}
+            </Link>
           </div>
-          {/* </div> */}
         </div>
       </div>
       <div>
