@@ -110,10 +110,10 @@ const Navigation = () => {
               />
             </a>
             <a href="#name">
-              <span className="white-text name">Pretty Woman</span>
+              <span className="white-text name">Joanne Doe</span>
             </a>
             <a href="#email">
-              <span className="white-text email">prettywoman@gmail.com</span>
+              <span className="white-text email">jo.doe@gmail.com</span>
             </a>
           </div>
         </li>

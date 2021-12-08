@@ -269,7 +269,10 @@ p {
 }
 
 #back_home {
-  margin: 0 0 0 30px;
+  background-color: #134d40;
+}
+#back_home-service {
+  margin-left: 30px;
   background-color: #134d40;
 }
 
@@ -366,6 +369,7 @@ p {
   padding-top: 30px;
   flex-wrap: wrap;
 }
+
 .search {
   margin-top: 50px;
   border-radius: 30px;
