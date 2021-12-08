@@ -20,7 +20,7 @@ const ServiceCards = ({ service }) => {
         <Link
           className="service-card__btn waves-effect waves-light btn "
           id="my_btn"
-          to={`./services/${id}`}
+          to={`/services/${id}`}
         >
           {"See more"}
         </Link>

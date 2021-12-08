@@ -41,9 +41,10 @@ const Navigation = () => {
           <i className="material-icons">menu</i>
         </a>
         {/* <!-- Brand Logo --> */}
-        <a href="/" className="brand-logo">
+        <NavLink to="/" className="brand-logo">
           <img src={Logo} className="logo" alt="Logo" />
-        </a>
+        </NavLink>
+        <span className="brand-logo_title">MVP FinPro</span>
         <ul id="nav-mobile" className="right hide-on-med-and-down">
           <li>
             <NavLink to="/" className="homebtn">
