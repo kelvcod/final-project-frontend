@@ -92,8 +92,8 @@ const Register = ({ setAuth }) => {
 
   return (
     <div class="container my-5">
-      <h4 className="register-text my-5">Register</h4>
-      <div class="col-sm-4 google_sign_in ">
+      {/* <h4 className="register-text my-5">Register</h4> */}
+      {/* <div class="col-sm-4 google_sign_in ">
         <div class="card social-block">
           <div class="card-body">
             <a
@@ -107,9 +107,10 @@ const Register = ({ setAuth }) => {
             </a>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="row">
         <div className="col s12 m8 offset-m2">
+          <h4 className="register-text my-5">Register</h4>
           <div className="card" id="login">
             <div className="card-body">
               {/* Makes POST request to /register route */}

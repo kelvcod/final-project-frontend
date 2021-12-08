@@ -140,6 +140,7 @@ select {
 }
 
 .container_footer {
+  text-align: center;
   display: inline;
   width: 100%;
   justify-content: space-around;
@@ -352,7 +353,9 @@ p {
 #back_home_checkout,
 #back_home_pay,
 #back_home,
-#proceed_checkout {
+#proceed_checkout,
+#back_home-service,
+#login {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -408,8 +411,12 @@ p {
 
 .register-text {
   position: relative;
-  left: 390px;
-  top: 50px;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 32px;
 }
 
 .google_sign_in {
@@ -575,12 +582,18 @@ p {
   text-align: center;
   margin: 50px 0px 200px;
 }
+/* .login_container {
+  text-align: center;
+  margin: 50px 0px px;
+} */
 .no_acc_text {
 }
 #register {
   background-color: #134d40;
 }
-
+#login {
+  /* background-color: #134d40; */
+}
 /* review page */
 .card-image-review {
   height: 50%;

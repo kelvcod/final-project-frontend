@@ -96,7 +96,7 @@ const Login = ({ setAuth }) => {
             </div>
           </div>
 
-          <div className="col s12 google_sign_in_login">
+          {/* <div className="col s12 google_sign_in_login">
             <div className="card ">
               <div className="card-body">
                 <Link
@@ -110,7 +110,7 @@ const Login = ({ setAuth }) => {
                 </Link>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="register_container">
             <p className="no_acc_text">Don't have an account yet?</p>
