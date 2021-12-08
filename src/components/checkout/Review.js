@@ -20,7 +20,6 @@ const Review = () => {
 
   return (
     <div className="row" id="single_service">
-      {/* <div className="col s12 m10 l8 xl8"> */}
       <div className="col s12 m8 offset-m2">
         <div className="card">
           <div className="serviceId_title">
