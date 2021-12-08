@@ -271,7 +271,7 @@ const Register = ({ setAuth }) => {
                 pathname: "/login",
                 // state: { location },
               }}
-              className="waves-effect waves-light btn"
+              className="waves-effect waves-light btn #004d40 teal darken-4"
               id="login"
             >
               Login
