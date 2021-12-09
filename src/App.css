@@ -221,6 +221,10 @@ select {
   width: 299px;
 }
 
+.card-display-separator {
+  max-width: 50%;
+}
+
 .seller-info {
   display: flex;
   justify-content: center;
@@ -653,6 +657,7 @@ p {
 }
 .card_container {
   font-family: "Montserrat", sans-serif;
+  justify-content: center;
   display: flex;
   font-size: 12px.2em;
   color: var(--dark-terminal-color);
@@ -687,6 +692,12 @@ p {
   margin-bottom: 20px;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
+}
+
+.slider-picture {
+  width: 100%;
+  object-fit: cover;
+  max-height: 500px;
 }
 
 @media screen and (max-width: 730px) {

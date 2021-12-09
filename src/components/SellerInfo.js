@@ -55,11 +55,7 @@ const SellerInfo = ({ serviceId }) => {
               </p>
               <hr />
               <p className="seller_about">{about}</p>
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
+
               <hr />
 
               <p className="seller_country">

@@ -31,7 +31,7 @@ const Service = () => {
         setServiceId(data);
       });
   }, [id]);
-
+  console.log(serviceId);
   if (!serviceId) return null;
 
   return (
@@ -45,32 +45,36 @@ const Service = () => {
           </div>
           <div className="card-image-service card_swipe service-image__wrap">
             <Swiper
-              spaceBetween={30}
+              spaceBetween={0}
               slidesPerView={1}
               onSlideChange={() => console.log("slide change")}
               onSwiper={(swiper) => console.log(swiper)}
             >
               <SwiperSlide>
                 <img
+                  className="slider-picture"
                   src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
                   alt="here is the service"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
+                  className="slider-picture"
+                  src={`${REACT_APP_BACKEND_URL}${serviceId.image_2}`}
                   alt="here is the service"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
+                  className="slider-picture"
+                  src={`${REACT_APP_BACKEND_URL}${serviceId.image_3}`}
                   alt="here is the service"
                 />
               </SwiperSlide>
               <SwiperSlide>
                 <img
-                  src={`${REACT_APP_BACKEND_URL}${serviceId.image}`}
+                  className="slider-picture"
+                  src={`${REACT_APP_BACKEND_URL}${serviceId.image_4}`}
                   alt="here is the service"
                 />
               </SwiperSlide>

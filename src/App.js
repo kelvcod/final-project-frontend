@@ -9,6 +9,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import SearchBar from "./components/SearchBar";
 import ResetPassword from "./components/ResetPassword";
+import NewPassword from "./components/NewPassword";
+import PaymentConfirmation from "./components/PaymentConfirmation";
 
 //import Breadcrumbs from "./components/Breadcrumbs";
 import Card from "./components/checkout/Card";
@@ -129,8 +131,14 @@ const App = () => {
         <Route path="/send-message">
           <MessageSent />
         </Route>
-        <Route path="/reset-password">
-          <MessageSent />
+        <Route exact path="/reset-password">
+          <ResetPassword />
+        </Route>
+        <Route exact path="/new-password">
+          <NewPassword />
+        </Route>
+        <Route exact path="/paymentConfirmation">
+          <PaymentConfirmation />
         </Route>
         <Route
           exact

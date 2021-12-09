@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 
 const Review = () => {
@@ -17,6 +17,13 @@ const Review = () => {
     title,
   } = location.state.serviceId;
   console.log(title);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   return (
     <div className="row" id="single_service">

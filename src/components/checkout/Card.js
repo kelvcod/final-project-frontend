@@ -1,19 +1,33 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { withRouter } from "react-router-dom";
 import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
 import StatusMessages, { useMessages } from "./StatusMessages";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory } from "react-router-dom";
 
 const CardForm = () => {
   const { REACT_APP_BACKEND_URL } = process.env;
   const stripe = useStripe();
   const elements = useElements();
   const [messages, addMessage] = useMessages();
+  const [inputs, setInputs] = useState();
+  const history = useHistory();
 
   let location = useLocation();
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+
   const { id, category, business_name, image, price, title } =
     location.state.location.state.serviceId;
+
+  const onChange = (e) => {
+    console.log(e.target.value);
+    setInputs({ ...inputs, [e.target.name]: e.target.value });
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -36,7 +50,7 @@ const CardForm = () => {
         body: JSON.stringify({
           paymentMethodType: "card",
           currency: "usd",
-          amount: `${price}`,
+          amount: price * 100,
         }),
       }
     ).then((r) => r.json());
@@ -46,18 +60,23 @@ const CardForm = () => {
       addMessage(backendError.message);
       return;
     }
-    addMessage("Client secret returned");
+    // addMessage("Client secret returned");
 
     // Confirm the payment on the client
+
+    console.log({
+      name: inputs.name,
+      email: inputs.email,
+    });
 
     const { error: stripeError, paymentIntent } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
           card: elements.getElement(CardElement),
           billing_details: {
-            name: "name",
+            name: inputs.name,
+            email: inputs.email,
           },
-          receipt_email: document.getElementById("email"),
         },
       });
 
@@ -69,6 +88,8 @@ const CardForm = () => {
 
     // Show a success message to your customer
     addMessage(`PaymentIntent ${paymentIntent.status}: ${paymentIntent.id}`);
+    // history.push("/");
+    history.push("/paymentConfirmation");
   };
   return (
     <div className="row" id="single_service">
@@ -100,7 +121,6 @@ const CardForm = () => {
               </h6>
 
               <div className="card_container">
-                <h5>Complete the checkout process</h5>
                 <form
                   id="payment-form"
                   className="card_form"
@@ -108,14 +128,22 @@ const CardForm = () => {
                 >
                   <label htmlFor="card">All fields are required</label>
                   <CardElement id="card" />
-                  <input type="text" name="name" placeholder="Full Name" />
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Full Name"
+                    // value="name"
+                    onChange={(e) => onChange(e)}
+                  />
                   <input
                     label="Email"
-                    id="outlined-email-input"
+                    id="email"
                     type="email"
                     name="email"
                     required
                     placeholder="Enter your email address"
+                    // value={email}
+                    onChange={(e) => onChange(e)}
                   />
                   <p>
                     You will receive notifications and receipts on this email
@@ -124,10 +152,10 @@ const CardForm = () => {
                     Pay
                   </button>
                 </form>
-                <StatusMessages messages={messages} />
+                {/* <StatusMessages messages={messages} /> */}
               </div>
               <div className="row" id="service_summary">
-                <div className="col s12 m10 l8 xl8">
+                <div className="col s12">
                   <div className="card_display_pay">
                     <div className="serviceId_title">
                       <br />
@@ -135,7 +163,7 @@ const CardForm = () => {
                       <h5>
                         <b>Total: ${price}</b>
                       </h5>
-                      <hr />
+                      <hr className="card-display-separator" />
                     </div>
                   </div>
                 </div>

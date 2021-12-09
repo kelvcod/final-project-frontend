@@ -37,7 +37,7 @@ const Footer = () => {
             <h5 className="white-text">About</h5>
             <ul>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a className="grey-text text-lighten-3" href="/register">
                   Become a Seller
                 </a>
               </li>

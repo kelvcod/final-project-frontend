@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import axios from "axios";
 
@@ -21,6 +21,13 @@ const ContactSeller = () => {
 
   const [status, setStatus] = useState("Submit");
   const [file, setFile] = useState();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
 
   const onChangeHandler = (event) => {
     if (event.target.files && event.target.files.length) {
@@ -96,7 +103,6 @@ const ContactSeller = () => {
               <li>Project description</li>
               <li>Specific instructions</li>
               <li>Relevant files (if any)</li>
-              <li>Your budget</li>
             </ul>
           </div>
           {/* form start */}
