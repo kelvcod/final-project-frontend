@@ -547,6 +547,27 @@ p {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
 }
+/* payment confirmation page */
+
+#payment-confirmation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  min-height: 75vh;
+}
+.payment-confirmation-font h4 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+}
+.btn_links-payment-confirmation {
+  margin-top: 80px;
+  align-self: center;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
 /* login page */
 .login-text {
   text-align: center;
