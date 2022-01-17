@@ -136,7 +136,7 @@ const ProfilePage = ({ setAuth, services }) => {
               </div>
               <div className="modal-footer">
                 <Link
-                  to="/"
+                  to={"/profile" ? "/profile" : "/"}
                   className="modal-close waves-effect waves-green btn-flat"
                 >
                   Close
