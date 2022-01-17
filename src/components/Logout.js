@@ -15,7 +15,11 @@ const Logout = ({ setAuth }) => {
 
   return (
     <div>
-      <button onClick={(e) => logout(e)} className="btn btn-primary">
+      <button
+        id="back_btn"
+        onClick={(e) => logout(e)}
+        className="btn btn-primary"
+      >
         Logout
       </button>
     </div>
