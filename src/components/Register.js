@@ -210,6 +210,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
+
                     <br />
                     <div>
                       <label htmlFor="userImage">Upload a profile image:</label>
@@ -220,20 +221,19 @@ const Register = ({ setAuth }) => {
                         onChange={onChangeHandler}
                       />
                     </div>
-                    <br />
 
-                    {/* <div className="row"> */}
-                    <div className="input-field col s12">
-                      <select name="type" id="users" ref={myFormSelect}>
-                        {/* <option disabled selected>
-                          Choose your option
-                        </option> */}
-                        <option value="seller">seller</option>
-                        <option value="buyer">buyer</option>
-                      </select>
-                      <label for="type">Type of user:</label>
+                    <div className="user_type">
+                      <div className="input-field col s12">
+                        <select name="type" id="users" ref={myFormSelect}>
+                          <option disabled selected>
+                            Choose your option
+                          </option>
+                          <option value="seller">seller</option>
+                          <option value="buyer">buyer</option>
+                        </select>
+                        <label for="type">Type of user:</label>
+                      </div>
                     </div>
-                    {/* </div> */}
 
                     {/* <div className="form-group">
                       <label for="type">Type of User</label>
@@ -247,7 +247,6 @@ const Register = ({ setAuth }) => {
                       />
                     </div> */}
 
-                    <br />
                     <div className="form-group">
                       <label for="business_name">Business Name</label>
                       <input
@@ -328,7 +327,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group ">
                       <label for="about">Short biography</label>
                       <textarea
                         type="textarea"

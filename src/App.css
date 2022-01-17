@@ -793,3 +793,8 @@ i.icon {
 .box {
   display: flex;
 }
+
+.user_type {
+  margin-top: 20px;
+  margin-bottom: 110px;
+}
