@@ -223,13 +223,17 @@ const Register = ({ setAuth }) => {
 
                     <div className="row">
                       <div className="input-field col s12">
-                        <select name="type" id="users" ref={myFormSelect}>
+                        <select
+                          multiple
+                          name="type"
+                          id="users"
+                          ref={myFormSelect}
+                        >
                           <option value="" disabled selected>
                             Choose your option
                           </option>
                           <option value="seller">seller</option>
                           <option value="customer">customer</option>
-                          {/* <option value="type">Both</option> */}
                         </select>
                         <label for="type">Type of user:</label>
                       </div>
