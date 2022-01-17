@@ -365,6 +365,11 @@ p {
   font-size: 14px;
 }
 
+.form-group {
+  font-size: 15px;
+  text-align: center;
+}
+
 #dropdown1 {
   position: absolute;
   top: -65px;
@@ -416,8 +421,8 @@ p {
 .register-text {
   position: relative;
   text-align: center;
-  margin-top: 10px;
-  margin-bottom: 40px;
+  margin-top: 40px;
+  margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   font-size: 32px;
@@ -568,20 +573,6 @@ p {
   font-weight: 400;
 }
 
-/* login page */
-.login-text {
-  text-align: center;
-  margin: 50px 0px 80px;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 600;
-  font-size: 25px;
-}
-
-.form-group {
-  font-size: 15px;
-  text-align: center;
-}
-
 #login {
   /* display: block; */
   /* flex-direction: column; */
@@ -590,9 +581,9 @@ p {
   font-weight: 400;
   font-size: 14px;
 }
-.card-body {
+/* .card-body {
   text-align: center;
-}
+} */
 
 .login_btn {
   position: relative;
@@ -607,10 +598,7 @@ p {
   text-align: center;
   margin: 50px 0px 200px;
 }
-/* .login_container {
-  text-align: center;
-  margin: 50px 0px px;
-} */
+
 .no_acc_text {
 }
 #register {
@@ -727,4 +715,81 @@ p {
     font-weight: 300;
     font-size: small;
   }
+}
+
+.no-match-warn {
+  width: 100%;
+  color: red;
+}
+
+.no-match {
+  width: 100%;
+
+  min-height: 450px;
+}
+
+.update-delete {
+  display: flex;
+  justify-content: space-around;
+}
+
+.manage-account {
+  display: flex;
+  justify-content: space-around;
+}
+
+.ind-link {
+  display: flex;
+  justify-content: center;
+}
+
+.bio {
+  text-align: justify;
+  margin-bottom: 40px;
+}
+
+/* delete this before pushing or edit the login css */
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+.brand-logo > img {
+  width: 50px;
+  height: 50px;
+  margin-top: 5px;
+}
+/* Menu - profile */
+.bg-card-user {
+  background: rgba(0, 77, 64, 0.5);
+  padding: 15px 0;
+  margin-bottom: 30px;
+}
+.truncate > img {
+  width: 100px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+/* LOGIN */
+
+i.icon {
+  font-size: 1em !important;
+  margin-top: 8px;
+}
+
+.login {
+  border: 1px solid #fff;
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+.box {
+  display: flex;
 }

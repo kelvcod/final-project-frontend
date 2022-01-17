@@ -3,6 +3,7 @@ import M from "materialize-css";
 
 import { NavLink } from "react-router-dom";
 import Logo from "../mvp-logo.png";
+import Logout from "./Logout";
 
 const Navigation = () => {
   const elem = document.querySelector(".sidenav");
@@ -15,7 +16,7 @@ const Navigation = () => {
   // const instances = M.Dropdown.init(elems, {
   //   hover: true,
   // });
-
+  const pathname = window.location.pathname;
   const myNav = useRef();
 
   useEffect(() => {
@@ -34,7 +35,8 @@ const Navigation = () => {
       <div className="nav-wrapper container ">
         {/* <!--  Trigger sidenav  --> */}
         <a
-          href="javascript:void(0)"
+          href="#"
+          // href="javascript:void(0)"
           data-target="slide-out"
           className="sidenav-trigger"
         >
@@ -56,11 +58,20 @@ const Navigation = () => {
               Orders
             </NavLink>
           </li>
+          {/* {pathname === "/profile" && (
+            <li>
+              <NavLink to="/profile" className="lgn">
+                Logout
+              </NavLink>
+            </li>
+          )} */}
+
           <li>
-            <NavLink to="/login" className="lgn">
+            <NavLink to="/auth/login" className="lgn">
               Login
             </NavLink>
           </li>
+
           {/* dropdown menu */}
           <li>
             <a
@@ -124,12 +135,12 @@ const Navigation = () => {
           </NavLink>
         </li>
         <li>
-          <a href="sass.html" className="ord">
+          <a href="/orders" className="ord">
             Orders
           </a>
         </li>
         <li>
-          <a href="badges.html" className="lgn">
+          <a href="/auth/login" className="lgn">
             Login
           </a>
         </li>

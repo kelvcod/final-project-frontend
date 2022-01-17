@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import axios from "axios";
 
-const { REACT_APP_BACKEND_URL } = process.env;
-
 const ContactSeller = () => {
+  const { REACT_APP_BACKEND_URL } = process.env;
   let history = useHistory();
   let location = useLocation();
   console.log(location);

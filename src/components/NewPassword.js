@@ -2,7 +2,7 @@ import React from "react";
 
 const NewPassword = () => {
   return (
-    <div>
+    <div className="container">
       <p>Your password has been successfully changed.</p>
     </div>
   );

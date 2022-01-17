@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
+import NewPassword from "./NewPassword";
+import M from "materialize-css";
 
 const ResetPassword = () => {
   const [inputs, setInputs] = useState();
+
+  const mySuperModal = useRef();
+  useEffect(() => {
+    if (mySuperModal.current) {
+      M.Modal.init(mySuperModal.current);
+    }
+  }, []);
 
   const history = useHistory();
 
@@ -12,11 +21,11 @@ const ResetPassword = () => {
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
-    history.push("/reset-password");
+    // history.push("/new-password");
   };
 
   return (
-    <div>
+    <div className="container">
       <form
         // action={`${REACT_APP_BACKEND_URL}/reset-password`}
         // method="POST"
@@ -53,10 +62,29 @@ const ResetPassword = () => {
             onChange={(e) => onChange(e)}
           />
         </div>
-        <button type="submit" className="login_btn">
-          Login
+        <button
+          type="submit"
+          className="login_btn modal-trigger"
+          href="#modal1"
+        >
+          Reset Password
         </button>
       </form>
+      <div>
+        <div id="modal1" className="modal col s12 m8 " ref={mySuperModal}>
+          <div className="modal-content ">
+            <NewPassword />
+          </div>
+          <div className="modal-footer">
+            <a
+              href="/auth/login"
+              className="modal-close waves-effect waves-green btn-flat"
+            >
+              Close
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

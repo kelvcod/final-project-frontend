@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import Home from "./components/Home";
 import "./App.css";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route, Redirect, useHistory } from "react-router-dom";
 import Service from "./components/Service";
 import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
@@ -17,11 +17,16 @@ import Card from "./components/checkout/Card";
 //import ApplePay from "./components/checkout/ApplePay";
 import ContactSeller from "./components/checkout/ContactSeller";
 import MessageSent from "./components/MessageSent";
-
 import Review from "./components/checkout/Review";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import ProfilePage from "./components/ProfilePage";
+import UpdateService from "./components/UpdateService";
+import DeleteService from "./components/DeleteService";
+// import NoMatch from "./components/NoMatch";
+import CreateService from "./components/CreateService";
+import ListService from "./components/ListService";
+// import { path } from "react-router-dom/cjs/react-router-dom.min";
 
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
@@ -31,6 +36,7 @@ toast.configure();
 const App = () => {
   // console.log(window);
   // console.log(window.innerWidth);
+  // let history = useHistory();
 
   const [services, setServices] = useState();
 
@@ -41,6 +47,10 @@ const App = () => {
 
   const { REACT_APP_BACKEND_URL } = process.env;
 
+  // const noMatchTimeout = setTimeout(() => {
+  //    history.push("/");
+  // }, 3000);
+
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
   };
@@ -49,7 +59,7 @@ const App = () => {
     try {
       const res = await fetch(`${REACT_APP_BACKEND_URL}/auth/verify`, {
         method: "GET",
-        headers: { jwt_token: localStorage.token },
+        headers: { token: localStorage.token },
       });
 
       const parseRes = await res.json();
@@ -92,15 +102,12 @@ const App = () => {
   };
 
   return (
-    <div>
+    <Fragment>
       <div>
         <Navigation />
       </div>
 
       <Switch>
-        <Route path="/login">
-          <Login />
-        </Route>
         <Route exact path="/">
           <SearchBar
             onHandleSearch={handleSearch}
@@ -128,6 +135,7 @@ const App = () => {
         <Route path="/contact/seller">
           <ContactSeller />
         </Route>
+
         <Route path="/send-message">
           <MessageSent />
         </Route>
@@ -140,9 +148,25 @@ const App = () => {
         <Route exact path="/paymentConfirmation">
           <PaymentConfirmation />
         </Route>
+        <Route exact path="/create-service">
+          <CreateService />
+        </Route>
+
+        {/* <Route exact path="/list-service">
+          <ListService services={services} />
+        </Route> */}
+
+        <Route exact path="/update-service">
+          <UpdateService />
+        </Route>
+
+        <Route exact path="/delete-service">
+          <DeleteService />
+        </Route>
+
         <Route
           exact
-          path="/login"
+          path="/auth/login"
           render={(props) =>
             !isAuthenticated ? (
               <Login {...props} setAuth={setAuth} />
@@ -153,12 +177,12 @@ const App = () => {
         />
         <Route
           exact
-          path="/register"
+          path="/auth/register"
           render={(props) =>
             !isAuthenticated ? (
               <Register {...props} setAuth={setAuth} />
             ) : (
-              <Redirect to="/login" />
+              <Redirect to="/auth/login" />
             )
           }
         />
@@ -167,27 +191,22 @@ const App = () => {
           path="/profile"
           render={(props) =>
             isAuthenticated ? (
-              <ProfilePage {...props} setAuth={setAuth} />
+              <ProfilePage {...props} setAuth={setAuth} services={services} />
             ) : (
-              <Redirect to="/login" />
+              <Redirect to="/auth/login" />
             )
           }
         />
-
-        {/* <Route exact path="/login">
-          <Login />
-        </Route>
-        <Route exact path="/register">
-          <Register />
-        </Route>
-        <Route exact path="/profile">
-          <ProfilePage />
+        <Redirect from="*" to="/" />
+        {/* <Route path="*">
+          <NoMatch noMatchTimeout={noMatchTimeout} />
         </Route> */}
       </Switch>
+
       <div>
         <Footer />
       </div>
-    </div>
+    </Fragment>
   );
 };
 

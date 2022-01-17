@@ -121,7 +121,7 @@ const Service = () => {
                 // hash: "#the-hash",
                 state: { serviceId },
               }}
-              class="btn-floating btn-large red pulse service_price"
+              className="btn-floating btn-large red pulse service_price"
             >
               ${serviceId.price}
             </Link>

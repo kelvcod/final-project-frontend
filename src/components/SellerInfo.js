@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 const SellerInfo = ({ serviceId }) => {
   const { REACT_APP_BACKEND_URL } = process.env;
   const {
-    id,
+    // id,
     first_name,
     last_name,
     image_user,
     category,
     business_name,
-    image,
-    price,
-    title,
+    // image,
+    // price,
+    // title,
     about,
     country,
   } = serviceId;
