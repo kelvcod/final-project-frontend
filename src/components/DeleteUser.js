@@ -60,13 +60,13 @@ const DeleteUser = ({ setAuth, profile }) => {
         undone.
       </h5>
       <div className="update-delete">
-        <Link
+        {/* <Link
+          to="/profile"
           className="service-card__btn waves-effect waves-light btn "
           id="back_btn"
-          to={`../profile`}
         >
           Back
-        </Link>
+        </Link> */}
         <button
           className="service-card__btn waves-effect waves-light btn "
           id="back_btn"
