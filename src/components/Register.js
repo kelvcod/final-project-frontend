@@ -220,36 +220,39 @@ const Register = ({ setAuth }) => {
                         onChange={onChangeHandler}
                       />
                     </div>
+                    <br />
 
-                    <div className="row">
-                      <div className="input-field col s12">
-                        <select
-                          multiple
-                          name="type"
-                          id="users"
-                          ref={myFormSelect}
-                        >
-                          <option value="" disabled selected>
-                            Choose your option
-                          </option>
-                          <option value="seller">seller</option>
-                          <option value="customer">customer</option>
-                        </select>
-                        <label for="type">Type of user:</label>
-                      </div>
+                    {/* <div className="row"> */}
+                    <div className="input-field col s12">
+                      <select
+                        multiple
+                        name="type"
+                        id="users"
+                        ref={myFormSelect}
+                      >
+                        <option value="" disabled selected>
+                          Choose your option
+                        </option>
+                        <option value="seller">seller</option>
+                        <option value="customer">customer</option>
+                      </select>
+                      <label for="type">Type of user:</label>
                     </div>
+                    {/* </div> */}
+
                     {/* <div className="form-group">
                       <label for="type">Type of User</label>
                       <input
-                        type="text"
-                        className="form-control my-3"
-                        name="type"
-                        value={type}
-                        onChange={(e) => onChange(e)}
-                        placeholder="Seller, Customer, or Both"
+                      type="text"
+                      className="form-control my-3"
+                      name="type"
+                      value={type}
+                      onChange={(e) => onChange(e)}
+                      placeholder="Seller, Customer, or Both"
                       />
                     </div> */}
 
+                    <br />
                     <div className="form-group">
                       <label for="business_name">Business Name</label>
                       <input
