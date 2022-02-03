@@ -127,29 +127,40 @@ const CreateService = ({ services }) => {
 
   return (
     <div>
-      <div className="container my-5">
-        <div className="row">
-          <div className="col s12 m8 offset-m2">
-            <h4 className="register-text my-5">Create A New Service</h4>
-            <div className="card" id="login">
-              <div className="card-body">
+      <div className="container ">
+        <div className="no_card" id="login">
+          <h4 className="register-text my-5">Create A New Service</h4>
+          <div className="card-body">
+            <div className="truncate bg-card-user">
+              <div className="row login">
                 {/* Makes POST request to create a service route */}
-                <form onSubmit={onSubmitForm}>
-                  <div className="form-group">
+                <form className="col s12" onSubmit={onSubmitForm}>
+                  <div className="input-field">
+                    <label for="user_id">Seller ID</label>
+                    <input
+                      type="text"
+                      className="validate my-3"
+                      name="user_id"
+                      value={user_id}
+                      // onChange={(e) => onChange(e)}
+                    />
+                  </div>
+                  <div className="input-field">
                     <label for="title">Title</label>
                     <input
                       type="text"
-                      className="form-control my-3"
+                      className="validate my-3"
                       name="title"
                       value={title}
                       onChange={(e) => onChange(e)}
                     />
                   </div>
-                  <div className="form-group">
+
+                  <div className="input-field">
                     <label for="category">Category</label>
                     <input
                       type="text"
-                      className="form-control my-3"
+                      className="validate my-3"
                       name="category"
                       value={category}
                       onChange={(e) => onChange(e)}
@@ -171,36 +182,25 @@ const CreateService = ({ services }) => {
                     </div>
                   </div>
 
-                  <div className="form-group">
-                    <label for="price">Price</label>
+                  <div className="input-field">
+                    <label for="price">Price $ (in USD)</label>
                     <input
                       type="text"
-                      className="form-control my-3"
+                      className="validate my-3"
                       name="price"
                       value={price}
                       onChange={(e) => onChange(e)}
-                      placeholder="$"
                     />
                   </div>
-                  <div className="form-group">
+                  <div className="input-field">
                     <label for="description">Description</label>
-                    <input
-                      type="text"
-                      className="form-control my-3"
+                    <textarea
+                      type="textarea"
+                      className="validate "
                       name="description"
                       value={description}
                       onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                  <div className="form-group">
-                    <label for="user_id">Seller ID</label>
-                    <input
-                      type="text"
-                      className="form-control my-3"
-                      name="user_id"
-                      value={user_id}
-                      onChange={(e) => onChange(e)}
-                    />
+                    ></textarea>
                   </div>
 
                   <button type="submit" className="login_btn">
@@ -210,16 +210,15 @@ const CreateService = ({ services }) => {
               </div>
             </div>
           </div>
+          <Link
+            className="service-card__btn waves-effect waves-light btn "
+            id="back_btn"
+            to={`../profile`}
+          >
+            Back
+          </Link>
         </div>
       </div>
-
-      <Link
-        className="service-card__btn waves-effect waves-light btn "
-        id="back_btn"
-        to={`../profile`}
-      >
-        Back
-      </Link>
     </div>
   );
 };

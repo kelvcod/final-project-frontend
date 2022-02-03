@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import logo from "../mvp-logo.png";
+import { useForm } from "react-hook-form";
 
 import M from "materialize-css";
 
@@ -22,11 +24,25 @@ const EditUser = ({ setAuth, profile }) => {
   //   about,
   // } = profile;
 
+  // useEffect(() => {
+  //   reset(profile);
+  // });
+  // const { reset } = useForm({
+  //   defaultValues: profile,
+  // });
+
   // console.log(first_name);
   const mySuperModal = useRef();
   useEffect(() => {
     if (mySuperModal.current) {
       M.Modal.init(mySuperModal.current);
+    }
+  }, []);
+
+  const myFormSelect = useRef();
+  useEffect(() => {
+    if (myFormSelect.current) {
+      M.FormSelect.init(myFormSelect.current);
     }
   }, []);
 
@@ -93,13 +109,13 @@ const EditUser = ({ setAuth, profile }) => {
     });
   }, []);
 
-  const onChangeHandler = (event) => {
-    console.log(event.target.files[0]);
-    setFile({
-      selectedFile: event.target.files[0],
-    });
-    // console.log(file);
-  };
+  // const onChangeHandler = (event) => {
+  //   console.log(event.target.files[0]);
+  //   setFile({
+  //     selectedFile: event.target.files[0],
+  //   });
+  //   // console.log(file);
+  // };
 
   const onChange = (e) => {
     setInputs({ ...inputs, [e.target.name]: e.target.value });
@@ -165,46 +181,18 @@ const EditUser = ({ setAuth, profile }) => {
   };
 
   return (
-    <div className="container my-5">
-      <div className="row">
-        <div className="col s12 m8 offset-m2">
-          <h5 className="register-text my-5">Update Profile Information</h5>
-          <div className="gf">
-            <div className="card-body">
-              <form onSubmit={onSubmitForm}>
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <input
-                      id="first_name"
-                      type="text"
-                      className="form-control my-3"
-                      name="first_name"
-                      value={first_name}
-                      onChange={(e) => onChange(e)}
-                    />
-                    <label className="active" for="first_name">
-                      First name
-                    </label>
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="last_name">
-                      Last name
-                    </label>
-                    <input
-                      id="last_name"
-                      type="text"
-                      className="form-control my-3"
-                      name="last_name"
-                      value={last_name}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+    <div className="container ">
+      <div className="no-card" id="login">
+        <h4 className="register-text my-5">Update Profile Information</h4>
 
-                <div>
-                  <label className="active" htmlFor="file">
+        <div className="card-body ">
+          <div>
+            <div className="center ">
+              <div className="truncate bg-card-user">
+                <div className="row login">
+                  <form className="col s12" onSubmit={onSubmitForm}>
+                    {/* <div> */}
+                    {/* <label className="active" htmlFor="file">
                     Upload a profile image:
                   </label>
                   <input
@@ -212,174 +200,247 @@ const EditUser = ({ setAuth, profile }) => {
                     id="file"
                     name="file"
                     onChange={onChangeHandler}
-                    multiple
-                  />
-                </div>
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
+                    
+                  /> */}
+
+                    {/* <div className="preview text-center">
+                        <img
+                          className="preview-img"
+                          src={
+                            image_user
+                              ? image_user
+                              : "http://simpleicon.com/wp-content/uploads/account.png"
+                          }
+                          alt="Preview Image"
+                          width="200"
+                          height="200"
+                        />
+                        <div className="browse-button">
+                          <span className="material-icons edit-icon">edit</span>
+                          <input
+                            className="browse-input"
+                            type="file"
+                            required
+                            name="file"
+                            id="file"
+                            onChange={onChangeHandler}
+                          />
+                        </div>
+                        <span className="Error"></span>
+                      </div> */}
+                    {/* </div> */}
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <input
+                          id="first_name"
+                          type="text"
+                          className="valid my-3"
+                          name="first_name"
+                          value={first_name}
+                          onChange={(e) => onChange(e)}
+                        />
+                        <label className="active" for="first_name">
+                          First name
+                        </label>
+                      </div>
+                    </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="last_name">
+                          Last name
+                        </label>
+                        <input
+                          id="last_name"
+                          type="text"
+                          className="valid my-3"
+                          name="last_name"
+                          value={last_name}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="rower">
+                      {/* <div className="input-field col s12 form-group ">
                     <label className="active" for="type">
                       Type of User
                     </label>
                     <input
                       id="type"
                       type="text"
-                      className="form-control my-3"
+                      className="valid my-3"
                       name="type"
                       value={type}
                       onChange={(e) => onChange(e)}
                       placeholder="Seller, Customer, or Both"
                     />
-                  </div>
-                </div>
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="business_name">
-                      Business Name
-                    </label>
-                    <input
-                      id="business_name"
-                      type="text"
-                      className="form-control my-3"
-                      name="business_name"
-                      value={business_name}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                  </div> */}
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="email">
-                      Email
-                    </label>
-                    <input
-                      id="email"
-                      type="email"
-                      className="form-control my-3"
-                      name="email"
-                      value={email}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                      <div className="user_type">
+                        <div className="input-field col s12">
+                          <select name="type" id="users" ref={myFormSelect}>
+                            <option disabled selected>
+                              Choose your option
+                            </option>
+                            <option value="seller">seller</option>
+                            <option value="buyer">buyer</option>
+                          </select>
+                          <label for="type">Type of user:</label>
+                        </div>
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="password">
-                      Password
-                    </label>
-                    <input
-                      id="password"
-                      type="password"
-                      className="form-control my-3"
-                      name="password"
-                      value={password}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="business_name">
+                          Business Name
+                        </label>
+                        <input
+                          id="business_name"
+                          type="text"
+                          className="valid my-3"
+                          name="business_name"
+                          value={business_name}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="phone_number">
-                      Phone number
-                    </label>
-                    <input
-                      id="phone_number"
-                      type="tel"
-                      className="form-control my-3"
-                      name="phone_number"
-                      value={phone_number}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="email">
+                          Email
+                        </label>
+                        <input
+                          id="email"
+                          type="email"
+                          className="valid my-3"
+                          name="email"
+                          value={email}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="address">
-                      Address
-                    </label>
-                    <input
-                      id="address"
-                      type="text"
-                      className="form-control my-3"
-                      name="address"
-                      value={address}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="password">
+                          Password
+                        </label>
+                        <input
+                          id="password"
+                          type="password"
+                          className="valid my-3"
+                          name="password"
+                          value={password}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="city">
-                      City
-                    </label>
-                    <input
-                      id="city"
-                      type="text"
-                      className="form-control my-3"
-                      name="city"
-                      value={city}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="phone_number">
+                          Phone number
+                        </label>
+                        <input
+                          id="phone_number"
+                          type="tel"
+                          className="valid my-3"
+                          name="phone_number"
+                          value={phone_number}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="state">
-                      State
-                    </label>
-                    <input
-                      id="state"
-                      type="text"
-                      className="form-control my-3"
-                      name="state"
-                      value={state}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="address">
+                          Address
+                        </label>
+                        <input
+                          id="address"
+                          type="text"
+                          className="valid my-3"
+                          name="address"
+                          value={address}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="country">
-                      Country
-                    </label>
-                    <input
-                      id="country"
-                      type="text"
-                      className="form-control my-3"
-                      name="country"
-                      value={country}
-                      onChange={(e) => onChange(e)}
-                    />
-                  </div>
-                </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="city">
+                          City
+                        </label>
+                        <input
+                          id="city"
+                          type="text"
+                          className="valid my-3"
+                          name="city"
+                          value={city}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
 
-                <div className="row">
-                  <div className="input-field col s12 form-group ">
-                    <label className="active" for="textarea1">
-                      Short biography
-                    </label>
-                    <textarea
-                      id="textarea1"
-                      type="text"
-                      className="materialize-textarea"
-                      name="about"
-                      value={about}
-                      onChange={(e) => onChange(e)}
-                    ></textarea>
-                  </div>
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="state">
+                          State
+                        </label>
+                        <input
+                          id="state"
+                          type="text"
+                          className="valid my-3"
+                          name="state"
+                          value={state}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="country">
+                          Country
+                        </label>
+                        <input
+                          id="country"
+                          type="text"
+                          className="valid my-3"
+                          name="country"
+                          value={country}
+                          onChange={(e) => onChange(e)}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="rower">
+                      <div className="input-field col s12 form-group ">
+                        <label className="active" for="textarea1">
+                          Short biography
+                        </label>
+                        <textarea
+                          id="textarea1"
+                          type="textarea"
+                          className="materialize-textarea"
+                          name="about"
+                          value={about}
+                          onChange={(e) => onChange(e)}
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div className="rower">
+                      <button type="submit" className="profile_update">
+                        Update Profile
+                      </button>
+                    </div>
+                  </form>
                 </div>
-                <div className="row">
-                  <button type="submit" className="login_btn">
-                    Update Profile
-                  </button>
-                </div>
-              </form>
+              </div>
             </div>
           </div>
         </div>

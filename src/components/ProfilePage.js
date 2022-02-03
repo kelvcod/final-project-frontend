@@ -1,5 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
-import RegisteredUser from "./RegisteredUser";
+// import RegisteredUser from "./RegisteredUser";
+import RegisteredUser from "./newRegComp/RegisteredUser2";
 import Logout from "./Logout";
 import { Link } from "react-router-dom";
 import EditUser from "./EditUser";

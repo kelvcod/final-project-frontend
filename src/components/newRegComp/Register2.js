@@ -2,7 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "axios";
-import logo from "../mvp-logo.png";
+import logo from "../../mvp-logo.png";
 import M from "materialize-css";
 
 const Register = ({ setAuth }) => {
@@ -118,17 +118,17 @@ const Register = ({ setAuth }) => {
       const body = {
         first_name,
         last_name,
-        image_user,
-        type,
-        business_name,
+        // image_user,
+        // type,
+        // business_name,
         email,
         password,
-        phone_number,
-        address,
-        city,
-        state,
-        country,
-        about,
+        // phone_number,
+        // address,
+        // city,
+        // state,
+        // country,
+        // about,
       };
       // console.log("JSON" + JSON.stringify(body));
 
@@ -191,7 +191,7 @@ const Register = ({ setAuth }) => {
                     // action={`${REACT_APP_BACKEND_URL}/auth/register`}
                     // method="POST"
                   >
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="first_name">First name</label>
                       <input
                         type="text"
@@ -201,7 +201,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="last_name">Last name</label>
                       <input
                         type="text"
@@ -212,7 +212,7 @@ const Register = ({ setAuth }) => {
                       />
                     </div>
 
-                    <br />
+                    {/* <br />
                     <div>
                       <label htmlFor="userImage">Upload a profile image:</label>
                       <input
@@ -234,9 +234,9 @@ const Register = ({ setAuth }) => {
                         </select>
                         <label for="type">Type of user:</label>
                       </div>
-                    </div>
+                    </div> */}
 
-                    {/* <div className="form-group">
+                    {/* <div className="form-group input-field">
                       <label for="type">Type of User</label>
                       <input
                       type="text"
@@ -248,7 +248,7 @@ const Register = ({ setAuth }) => {
                       />
                     </div> */}
 
-                    <div className="form-group">
+                    {/* <div className="form-group input-field">
                       <label for="business_name">Business Name</label>
                       <input
                         type="text"
@@ -257,8 +257,8 @@ const Register = ({ setAuth }) => {
                         value={business_name}
                         onChange={(e) => onChange(e)}
                       />
-                    </div>
-                    <div className="form-group">
+                    </div> */}
+                    <div className="form-group input-field">
                       <label for="email">Email</label>
                       <input
                         type="email"
@@ -268,7 +268,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="password">Password</label>
                       <input
                         type="password"
@@ -278,7 +278,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    {/* <div className="form-group input-field">
                       <label for="phone_number">Phone number</label>
                       <input
                         type="tel"
@@ -288,7 +288,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="address">Address</label>
                       <input
                         type="text"
@@ -298,7 +298,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="city">City</label>
                       <input
                         type="text"
@@ -308,7 +308,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="state">State</label>
                       <input
                         type="text"
@@ -318,7 +318,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group input-field">
                       <label for="country">Country</label>
                       <input
                         type="text"
@@ -328,7 +328,7 @@ const Register = ({ setAuth }) => {
                         onChange={(e) => onChange(e)}
                       />
                     </div>
-                    <div className="form-group ">
+                    <div className="form-group input-field ">
                       <label for="about">Short biography</label>
                       <textarea
                         type="textarea"
@@ -337,7 +337,7 @@ const Register = ({ setAuth }) => {
                         value={about}
                         onChange={(e) => onChange(e)}
                       />
-                    </div>
+                    </div> */}
                     <button type="submit" className="login_btn">
                       Register
                     </button>

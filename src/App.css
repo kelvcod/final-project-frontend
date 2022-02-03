@@ -425,7 +425,7 @@ p {
   margin-bottom: 10px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-  font-size: 32px;
+  font-size: 20px;
 }
 
 .google_sign_in {
@@ -797,4 +797,100 @@ i.icon {
 .user_type {
   margin-top: 20px;
   margin-bottom: 110px;
+}
+
+/* edit user css */
+
+.preview {
+  padding: 10px;
+  position: relative;
+  left: 100px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+
+.preview i {
+  color: white;
+  font-size: 35px;
+  transform: translate(50px, 130px);
+}
+
+.preview-img {
+  border-radius: 100%;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.7);
+}
+
+.browse-button {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  position: absolute; /* Tweak the position property if the element seems to be unfit */
+  top: 10px;
+  left: 10px;
+  background: linear-gradient(180deg, transparent, black);
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+.browse-button:hover {
+  opacity: 1;
+}
+
+.browse-input {
+  width: 200px;
+  height: 200px;
+  border-radius: 100%;
+  transform: translate(-1px, -26px);
+  opacity: 0;
+}
+
+.edit-icon {
+  position: relative;
+  top: 100px;
+  left: 100px;
+  color: #efefef;
+  font-size: 70px;
+}
+.smile {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  /* position: relative; */
+  /* right: 100px; */
+  background-color: rgba(34, 100, 90, 0.4);
+}
+
+.name_ {
+  position: relative;
+  /* bottom: 50px; */
+  /* left: 20px; */
+}
+.contact_profile {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.img_profile {
+  position: relative;
+  margin: 10px 0 0 150px;
+  background-color: #134d40;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+.profile_update {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  /* position: relative; */
+  /* margin: 10px 0 0 150px; */
+  background-color: #134d40;
+  color: white;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.img_text {
+  text-align: center;
 }
