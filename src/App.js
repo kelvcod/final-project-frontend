@@ -11,6 +11,9 @@ import SearchBar from "./components/SearchBar";
 import ResetPassword from "./components/ResetPassword";
 import NewPassword from "./components/NewPassword";
 import PaymentConfirmation from "./components/PaymentConfirmation";
+import Art from "./components/category/Art";
+import Entertainment from "./components/category/Entertainment";
+import Instruments from "./components/category/Instruments";
 
 //import Breadcrumbs from "./components/Breadcrumbs";
 import Card from "./components/checkout/Card";
@@ -149,9 +152,9 @@ const App = () => {
         <Route exact path="/paymentConfirmation">
           <PaymentConfirmation />
         </Route>
-        <Route exact path="/create-service">
+        {/* <Route exact path="/create-service">
           <CreateService />
-        </Route>
+        </Route> */}
 
         {/* <Route exact path="/list-service">
           <ListService services={services} />
@@ -163,6 +166,18 @@ const App = () => {
 
         <Route exact path="/delete-service">
           <DeleteService />
+        </Route>
+
+        <Route exact path="/category/art">
+          <Art />
+        </Route>
+
+        <Route exact path="/category/entertainment">
+          <Entertainment />
+        </Route>
+
+        <Route exact path="/category/instruments">
+          <Instruments />
         </Route>
 
         <Route

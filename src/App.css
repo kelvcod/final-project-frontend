@@ -894,3 +894,17 @@ i.icon {
 .img_text {
   text-align: center;
 }
+
+.category_art {
+  padding: 0;
+  margin: 0 auto;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.art_text {
+  text-align: center;
+}

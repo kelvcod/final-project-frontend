@@ -1,13 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
-import EditImage from "./EditImage";
+import EditImage from "./UploadImage";
 import M from "materialize-css";
 import { Link } from "react-router-dom";
 
 const ProfileImage = ({ profile }) => {
   const { image_user, first_name, last_name } = profile;
-  const [file, setFile] = useState({
-    selectedFile: null,
-  });
+  // const [file, setFile] = useState({
+  //   selectedFile: null,
+  // });
 
   const mySuperModal = useRef();
   useEffect(() => {

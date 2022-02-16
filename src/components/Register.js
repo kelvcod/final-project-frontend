@@ -21,7 +21,7 @@ const Register = ({ setAuth }) => {
   const [inputs, setInputs] = useState({
     first_name: "",
     last_name: "",
-    image_user: "",
+    // image_user: "",
     type: "",
     business_name: "",
     email: "",
@@ -41,7 +41,7 @@ const Register = ({ setAuth }) => {
   const {
     first_name,
     last_name,
-    image_user,
+    // image_user,
     type,
     business_name,
     email,
@@ -83,42 +83,43 @@ const Register = ({ setAuth }) => {
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
-    // const formData = new FormData();
-    // const {
-    //   first_name,
-    //   last_name,
-    //   image_user,
-    //   type,
-    //   business_name,
-    //   email,
-    //   password,
-    //   phone_number,
-    //   address,
-    //   city,
-    //   state,
-    //   country,
-    //   about,
-    // } = e.target.elements;
-
-    // formData.append("first_name", first_name.value);
-    // formData.append("last_name", last_name.value);
-    // formData.append("type", type.value);
-    // formData.append("business_name", business_name.value);
-    // formData.append("email", email.value);
-    // formData.append("password", password.value);
-    // formData.append("phone_number", phone_number.value);
-    // formData.append("address", address.value);
-    // formData.append("city", city.value);
-    // formData.append("state", state.value);
-    // formData.append("country", country.value);
-    // formData.append("about", about.value);
-    // formData.append("image_user", userImage);
 
     try {
+      // const formData = new FormData();
+      // const {
+      //   first_name,
+      //   last_name,
+      //   image_user,
+      //   type,
+      //   business_name,
+      //   email,
+      //   password,
+      //   phone_number,
+      //   address,
+      //   city,
+      //   state,
+      //   country,
+      //   about,
+      // } = e.target.elements;
+
+      // formData.append("first_name", first_name.value);
+      // formData.append("last_name", last_name.value);
+      // formData.append("type", type.value);
+      // formData.append("business_name", business_name.value);
+      // formData.append("email", email.value);
+      // formData.append("password", password.value);
+      // formData.append("phone_number", phone_number.value);
+      // formData.append("address", address.value);
+      // formData.append("city", city.value);
+      // formData.append("state", state.value);
+      // formData.append("country", country.value);
+      // formData.append("about", about.value);
+      // formData.append("image_user", userImage);
+
       const body = {
         first_name,
         last_name,
-        image_user,
+        // image_user,
         type,
         business_name,
         email,
@@ -213,7 +214,7 @@ const Register = ({ setAuth }) => {
                     </div>
 
                     <br />
-                    <div>
+                    {/* <div>
                       <label htmlFor="userImage">Upload a profile image:</label>
                       <input
                         type="file"
@@ -221,7 +222,7 @@ const Register = ({ setAuth }) => {
                         name="userImage"
                         onChange={onChangeHandler}
                       />
-                    </div>
+                    </div> */}
 
                     <div className="user_type">
                       <div className="input-field col s12">

@@ -97,13 +97,13 @@ const ManageUser = ({ profile }) => {
           {...register("last_name", { required: true, maxLength: 100 })}
         />
 
-        <input
+        {/* <input
           type="file"
           id="file"
           placeholder="Upload a profile image"
           {...register("image_user", { required: false, maxLength: 4 })}
           onChange={onChangeHandler}
-        />
+        /> */}
 
         <input
           type="text"

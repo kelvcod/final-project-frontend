@@ -58,13 +58,6 @@ const Navigation = () => {
               Orders
             </NavLink>
           </li>
-          {/* {pathname === "/profile" && (
-            <li>
-              <NavLink to="/profile" className="lgn">
-                Logout
-              </NavLink>
-            </li>
-          )} */}
 
           <li>
             <NavLink to="/auth/login" className="lgn">
@@ -85,15 +78,15 @@ const Navigation = () => {
           </li>
           <ul id="dropdown1" className="dropdown-content">
             <li className="xyz">
-              <a href="#!">ART</a>
+              <NavLink to="/category/art">ART</NavLink>
             </li>
             <li className="xyz">
-              <a href="#!" className="drop">
+              <NavLink to="/category/entertainment" className="drop">
                 ENTERTAINMENT
-              </a>
+              </NavLink>
             </li>
             <li className="xyz">
-              <a href="#!">INSTRUMENTS</a>
+              <NavLink to="/category/instruments">INSTRUMENTS</NavLink>
             </li>
           </ul>
           {/* end dropwodn menu */}

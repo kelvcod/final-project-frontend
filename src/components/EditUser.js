@@ -39,6 +39,13 @@ const EditUser = ({ setAuth, profile }) => {
     }
   }, []);
 
+  const prefill = useRef();
+  useEffect(() => {
+    if (prefill.current) {
+      M.updateTextFields();
+    }
+  }, []);
+
   const myFormSelect = useRef();
   useEffect(() => {
     if (myFormSelect.current) {

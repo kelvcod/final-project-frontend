@@ -9,7 +9,7 @@ const Footer = () => {
             <h5 className="white-text">Contact us</h5>
             <ul className="grey-text text-lighten-4">
               <li>Address: MVP Strasse 1, 10967 Berlin</li>
-              <li>Email: mvp@ymail.com</li>
+              <li>Email: mvp.finpro@gmail.com</li>
               <li>Phone: +49 176 12345678</li>
             </ul>
           </div>
@@ -17,17 +17,23 @@ const Footer = () => {
             <h5 className="white-text">Categories</h5>
             <ul>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a className="grey-text text-lighten-3" href="/category/art">
                   Art
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a
+                  className="grey-text text-lighten-3"
+                  href="/category/entertainment"
+                >
                   Entertainment
                 </a>
               </li>
               <li>
-                <a className="grey-text text-lighten-3" href="#!">
+                <a
+                  className="grey-text text-lighten-3"
+                  href="/category/instruments"
+                >
                   Instruments
                 </a>
               </li>

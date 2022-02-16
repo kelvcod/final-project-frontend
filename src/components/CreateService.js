@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { toast } from "react-toastify";
 
-const CreateService = ({ services }) => {
+const CreateService = ({ profile }) => {
   const { REACT_APP_BACKEND_URL } = process.env;
   let history = useHistory();
   const [service, setService] = useState({
-    id: "",
+    // id: "",
     user_id: "",
     title: "",
     image: "",
@@ -24,7 +24,7 @@ const CreateService = ({ services }) => {
   });
 
   const {
-    id,
+    // id,
     user_id,
     title,
     image,
@@ -91,7 +91,7 @@ const CreateService = ({ services }) => {
     e.preventDefault();
     try {
       const body = {
-        id,
+        // id,
         user_id,
         title,
         image,
@@ -102,7 +102,7 @@ const CreateService = ({ services }) => {
         price,
         description,
       };
-      const response = await fetch(`${REACT_APP_BACKEND_URL}/services/`, {
+      const response = await fetch(`${REACT_APP_BACKEND_URL}/services/create`, {
         method: "POST",
         headers: {
           "Content-type": "application/json",
@@ -141,8 +141,8 @@ const CreateService = ({ services }) => {
                       type="text"
                       className="validate my-3"
                       name="user_id"
-                      value={user_id}
-                      // onChange={(e) => onChange(e)}
+                      value={service.user_id}
+                      onChange={(e) => onChange(e)}
                     />
                   </div>
                   <div className="input-field">
@@ -151,7 +151,7 @@ const CreateService = ({ services }) => {
                       type="text"
                       className="validate my-3"
                       name="title"
-                      value={title}
+                      // value={title}
                       onChange={(e) => onChange(e)}
                     />
                   </div>
@@ -162,7 +162,7 @@ const CreateService = ({ services }) => {
                       type="text"
                       className="validate my-3"
                       name="category"
-                      value={category}
+                      // value={category}
                       onChange={(e) => onChange(e)}
                     />
                   </div>
@@ -188,7 +188,7 @@ const CreateService = ({ services }) => {
                       type="text"
                       className="validate my-3"
                       name="price"
-                      value={price}
+                      // value={price}
                       onChange={(e) => onChange(e)}
                     />
                   </div>
@@ -198,7 +198,7 @@ const CreateService = ({ services }) => {
                       type="textarea"
                       className="validate "
                       name="description"
-                      value={description}
+                      // value={description}
                       onChange={(e) => onChange(e)}
                     ></textarea>
                   </div>

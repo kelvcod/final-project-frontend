@@ -2,13 +2,14 @@ import React, { useRef, useState, useEffect } from "react";
 // import RegisteredUser from "./RegisteredUser";
 import RegisteredUser from "./newRegComp/RegisteredUser2";
 import Logout from "./Logout";
-import { Link } from "react-router-dom";
+import { Link, Switch, Route } from "react-router-dom";
 import EditUser from "./EditUser";
 import ManageUser from "./ManageUser";
 import ListService from "./ListService";
 import M from "materialize-css";
 import DeleteUser from "./DeleteUser";
 import Orders from "./Orders";
+import CreateService from "./CreateService";
 
 const ProfilePage = ({ setAuth, services }) => {
   const { REACT_APP_BACKEND_URL } = process.env;
@@ -77,8 +78,8 @@ const ProfilePage = ({ setAuth, services }) => {
           <div>
             <div id="modal1" className="modal col s12 m8 " ref={mySuperModal}>
               <div className="modal-content ">
-                <EditUser profile={profile} />
-                {/* <ManageUser profile={profile} /> */}
+                {/* <EditUser profile={profile} /> */}
+                <ManageUser profile={profile} />
               </div>
               <div className="modal-footer">
                 <Link
@@ -174,6 +175,12 @@ const ProfilePage = ({ setAuth, services }) => {
       <RegisteredUser profile={profile} />
       <hr />
       <Logout setAuth={setAuth} />
+
+      <Switch>
+        <Route exact path="/create-service">
+          <CreateService profile={profile} />
+        </Route>
+      </Switch>
     </div>
   );
 };
