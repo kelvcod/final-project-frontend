@@ -75,45 +75,43 @@ const Login = ({ setAuth }) => {
                     className="circle responsive-img"
                   />
 
+                  <h6>Enter your email and password.</h6>
                   {/* <div className="col s12 m8 offset-m2"> */}
                   <div className="row login">
-                    <h6>
-                      Enter your email and password to login to your account.
-                    </h6>
                     <form className="col s12" onSubmit={onSubmitForm}>
-                      <div className="row">
-                        <div className="input-field box col m12 s12  ">
-                          <i className="material-icons icon prefix">
-                            account_circle
-                          </i>
+                      {/* <div className="row"> */}
+                      <div className="input-field box col m12 s12  ">
+                        <i className="material-icons icon prefix">
+                          account_circle
+                        </i>
 
-                          <input
-                            id="email"
-                            type="email"
-                            className=" validate "
-                            name="email"
-                            value={email}
-                            onChange={(e) => onChange(e)}
-                          />
-                          <label for="email">Email</label>
-                        </div>
+                        <input
+                          id="email"
+                          type="email"
+                          className=" validate "
+                          name="email"
+                          value={email}
+                          onChange={(e) => onChange(e)}
+                        />
+                        <label for="email">Email</label>
+                        {/* </div> */}
                       </div>
 
-                      <div className="row">
-                        <div className="input-field box col m12 s12 ">
-                          <i className="material-icons icon prefix">
-                            enhanced_encryption
-                          </i>
-                          <input
-                            id="password"
-                            type="password"
-                            className="validate"
-                            name="password"
-                            value={password}
-                            onChange={(e) => onChange(e)}
-                          />
-                          <label for="password">Password</label>
-                        </div>
+                      {/* <div className="row"> */}
+                      <div className="input-field box col m12 s12 ">
+                        <i className="material-icons icon prefix">
+                          enhanced_encryption
+                        </i>
+                        <input
+                          id="password"
+                          type="password"
+                          className="validate"
+                          name="password"
+                          value={password}
+                          onChange={(e) => onChange(e)}
+                        />
+                        <label for="password">Password</label>
+                        {/* </div> */}
                       </div>
                       <div className="row">
                         <button

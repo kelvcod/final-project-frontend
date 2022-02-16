@@ -12,10 +12,15 @@ const Navigation = () => {
     outDuration: 350,
     edge: "left",
   });
+
+  const collapsibleElem = document.querySelector(".collapsible");
+  const collapsibleInstance = M.Collapsible.init(collapsibleElem, {
+    inDuration: 350,
+    outDuration: 350,
+    edge: "left",
+  });
   // -------- dropdown menu instance
-  // const instances = M.Dropdown.init(elems, {
-  //   hover: true,
-  // });
+
   const pathname = window.location.pathname;
   const myNav = useRef();
 
@@ -108,34 +113,57 @@ const Navigation = () => {
               />
             </div>
             <a href="#user">
-              <img
-                className="circle"
-                src="http://materializecss.com/images/yuna.jpg"
-                alt="Avatar User View"
-              />
+              <img className="circle" src={Logo} alt="Avatar logo" />
             </a>
-            <a href="#name">
-              <span className="white-text name">Joanne Doe</span>
-            </a>
+            <NavLink to="/">
+              <span className="white-text name">MVP FinPro</span>
+            </NavLink>
             <a href="#email">
-              <span className="white-text email">jo.doe@gmail.com</span>
+              <span className="white-text email">mvp.finpro@gmail.com</span>
             </a>
           </div>
         </li>
         <li>
           <NavLink to="/" className="homebtn">
+            <span className="material-icons icon_sn">home</span>
             Home
           </NavLink>
         </li>
         <li>
-          <a href="/orders" className="ord">
+          <NavLink to="/orders" className="ord">
+            <span className="material-icons icon_sn">shopping_basket</span>
             Orders
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href="/auth/login" className="lgn">
+          <NavLink to="/auth/login" className="lgn">
+            <span className="material-icons icon_sn">login</span>
             Login
-          </a>
+          </NavLink>
+        </li>
+        <li className="no-padding">
+          <ul className="collapsible collapsible-accordion">
+            <li>
+              <a className="collapsible-header">
+                Category<i className="material-icons">arrow_drop_down</i>
+              </a>
+              <div className="collapsible-body">
+                <ul>
+                  <li>
+                    <NavLink to="/category/art">ART</NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/category/entertainment" className="drop">
+                      ENTERTAINMENT
+                    </NavLink>
+                  </li>
+                  <li>
+                    <NavLink to="/category/instruments">INSTRUMENTS</NavLink>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>

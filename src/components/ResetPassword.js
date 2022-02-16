@@ -60,12 +60,9 @@ const ResetPassword = () => {
   // };
 
   return (
-    <div className="container" style={{ width: "700px" }}>
+    <div className="container">
       <div className="no-card" id="login">
-        <p className="register-text my-5">
-          Enter the email addressed you used for registration. Click on the link
-          in the email and follor the steps to reset your password.
-        </p>
+        <p className="register-text">Enter your email address.</p>
         <div className="card-body">
           <div>
             <div className="center ">
