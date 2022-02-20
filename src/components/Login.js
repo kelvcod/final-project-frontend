@@ -37,6 +37,7 @@ const Login = ({ setAuth }) => {
 
   const onSubmitForm = async (e) => {
     e.preventDefault();
+
     try {
       const body = { email, password };
       const response = await fetch(`${REACT_APP_BACKEND_URL}/auth/login`, {
@@ -92,6 +93,7 @@ const Login = ({ setAuth }) => {
                           name="email"
                           value={email}
                           onChange={(e) => onChange(e)}
+                          required
                         />
                         <label for="email">Email</label>
                         {/* </div> */}
@@ -108,6 +110,7 @@ const Login = ({ setAuth }) => {
                           className="validate"
                           name="password"
                           value={password}
+                          required
                           onChange={(e) => onChange(e)}
                         />
                         <label for="password">Password</label>
